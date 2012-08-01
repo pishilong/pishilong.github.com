@@ -1,98 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>海岩咖啡的部落格</title>
-  <meta name="author" content="海岩咖啡">
-
-  
-  <meta name="description" content="http://www.geekpark.net/read/view/161904 http://it.sohu.com/20120725/n349005014.shtml 1.懒惰导致发明，懒惰是创新的动力 2.时尚是重要动力，看别人都在用，不要太“工具化” 3.用户是乌合之众， &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://pishilong.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="海岩咖啡的部落格" type="application/atom+xml">
-  
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">海岩咖啡的部落格</a></h1>
-  
-    <h2>不以无过为贤，而以改过为美</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:pishilong.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[海岩咖啡的部落格]]></title>
+  <link href="http://pishilong.github.com/atom.xml" rel="self"/>
+  <link href="http://pishilong.github.com/"/>
+  <updated>2012-08-01T13:05:18+08:00</updated>
+  <id>http://pishilong.github.com/</id>
+  <author>
+    <name><![CDATA[海岩咖啡]]></name>
     
-      <h1 class="entry-title"><a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">微信背后的产品观</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2012-08-01T09:46:00+08:00" pubdate data-updated="true">2012年08月01日 09:46:00</time>
-        
-         | <a href="/blog/wei-xin-bei-hou-de-chan-pin-guan#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>http://www.geekpark.net/read/view/161904</p>
+  <entry>
+    <title type="html"><![CDATA[微信背后的产品观]]></title>
+    <link href="http://pishilong.github.com/blog/wei-xin-bei-hou-de-chan-pin-guan"/>
+    <updated>2012-08-01T09:46:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/wei-xin-bei-hou-de-chan-pin-guan</id>
+    <content type="html"><![CDATA[<p>http://www.geekpark.net/read/view/161904</p>
 
 <p>http://it.sohu.com/20120725/n349005014.shtml</p>
 
@@ -175,44 +101,15 @@
 　　13、一个产品的基本功能不受用户认可，做加法也无济于事。
 　　14、想不清楚一个功能点之前，宁可不做。
 　　15、千万不要让用户在产品里“管理”什么。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/ckeditorde-ni-xi">Ckeditor的逆袭</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-28T11:39:00+08:00" pubdate data-updated="true">2012年06月28日 11:39:00</time>
-        
-         | <a href="/blog/ckeditorde-ni-xi#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
+  <entry>
+    <title type="html"><![CDATA[ckeditor的逆袭]]></title>
+    <link href="http://pishilong.github.com/blog/ckeditorde-ni-xi"/>
+    <updated>2012-06-28T11:39:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/ckeditorde-ni-xi</id>
+    <content type="html"><![CDATA[<p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
 
 <p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
 
@@ -256,44 +153,15 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
 <p>下一篇着重讲下数学公式编辑器的集成，从官方的php移植到了rails上。</p>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/yi-shi-wei-jing">以史为镜</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-28T00:39:00+08:00" pubdate data-updated="true">2012年06月28日 00:39:00</time>
-        
-         | <a href="/blog/yi-shi-wei-jing#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我记得”以史为镜”，因为一篇文章。</p>
+  <entry>
+    <title type="html"><![CDATA[以史为镜]]></title>
+    <link href="http://pishilong.github.com/blog/yi-shi-wei-jing"/>
+    <updated>2012-06-28T00:39:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/yi-shi-wei-jing</id>
+    <content type="html"><![CDATA[<p>我记得”以史为镜”，因为一篇文章。</p>
 
 <p>那是12年前，读初二的时候，当时有幸进入鲁迅文学院的少年作家班学习，在某一期的内部通讯上，看到一篇古怪题目的文章，叫《猫照镜》，详细的内容已经记不清了，但是记得他的写作手法有卡夫卡变形记的影子，用一个猫照镜这样的荒诞的而无意义的情景影射到了魏征身上，魏征劝谏唐太宗:以铜为镜可以正衣冠，以人为镜可以明得失，以史为镜可以知兴替。</p>
 
@@ -325,44 +193,15 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
 <p>编年体到纪传体。都体会一下。</p>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/sha-men">厦门</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-24T22:45:00+08:00" pubdate data-updated="true">2012年06月24日 22:45:00</time>
-        
-         | <a href="/blog/sha-men#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>以“厦门”为题，一下笔，就不由自主地想说“厦门是我一直都想去的地方”。但是，却不是。</p>
+  <entry>
+    <title type="html"><![CDATA[厦门]]></title>
+    <link href="http://pishilong.github.com/blog/sha-men"/>
+    <updated>2012-06-24T22:45:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/sha-men</id>
+    <content type="html"><![CDATA[<p>以“厦门”为题，一下笔，就不由自主地想说“厦门是我一直都想去的地方”。但是，却不是。</p>
 
 <p>厦门，一直被广为传颂着，厦门的空气，鼓浪屿上的精致小店，各种适合步行的观光路线，美丽的海滩，漂亮的海岸线。但是这种铺天盖地的宣传和赞叹，让我不由得反感，哪怕真的如梦似幻。</p>
 
@@ -376,163 +215,25 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
 <p>其二，他有一般成绩特别好的同学的一个共性，或多或少存在些癖好。例如塑料袋，例如水壶，例如无论早晚的一声“早上好”。一天之计在于晨，在他身上得到淋漓的体现。他就像早上八九点钟的太阳，时时刻刻都像朝阳般地绽放着自己的智慧，一次有一次地逼近满分。也毫无顾忌地在班级茶话会时，鄙视着大家，“如果我不是高三的
   时候看了200部电影，我就不会比高二参加高考考得还差，来到南师。”除了掌声，我不知道如何表达我的心情了。</p>
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[骑行]]></title>
+    <link href="http://pishilong.github.com/blog/qi-xing"/>
+    <updated>2012-06-23T01:26:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/qi-xing</id>
+    <content type="html"><![CDATA[<p>今天骑了16KM+,当时不觉得累，现在大腿都是滚烫的。</p>
+]]></content>
+  </entry>
   
-
-
-    </article>
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://pishilong.github.com/blog/hello-world"/>
+    <updated>2012-06-22T23:07:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/hello-world</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/qi-xing">骑行</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-23T01:26:00+08:00" pubdate data-updated="true">2012年06月23日 01:26:00</time>
-        
-         | <a href="/blog/qi-xing#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天骑了16KM+,当时不觉得累，现在大腿都是滚烫的。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/hello-world">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-22T23:07:00+08:00" pubdate data-updated="true">2012年06月22日 23:07:00</time>
-        
-         | <a href="/blog/hello-world#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/生活'>生活 (2)</a></li><li><a href='/blog/categories/程序猿'>程序猿 (1)</a></li><li><a href='/blog/categories/读书笔记'>读书笔记 (2)</a></li></ul>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">微信背后的产品观</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/ckeditorde-ni-xi">ckeditor的逆袭</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/yi-shi-wei-jing">以史为镜</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/sha-men">厦门</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/qi-xing">骑行</a>
-      </li>
-    
-  </ul>
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - 海岩咖啡 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'pishilong';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+</feed>
