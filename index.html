@@ -9,7 +9,7 @@
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="http://www.geekpark.net/read/view/161904 http://it.sohu.com/20120725/n349005014.shtml 1.懒惰导致发明，懒惰是创新的动力 2.时尚是重要动力，看别人都在用，不要太“工具化” 3.用户是乌合之众， &hellip;">
+  <meta name="description" content="Rails: 3.2.6 使用的是Ckeditor的Rails Gem. 突然不能上传文件，控制台显示在上传插入数据库时直接rollback了 于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -61,6 +61,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai">Ckeditor上传文件失败</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true">2012年08月08日 11:17:00</time>
+        
+         | <a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Rails: 3.2.6</p>
+
+<p>使用的是Ckeditor的Rails Gem.</p>
+
+<p>突然不能上传文件，控制台显示在上传插入数据库时直接rollback了</p>
+
+<p>于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset(asset)方法，</p>
+
+<p>将asset.save,改为asset.save!</p>
+
+<p>查看抛出的异常,是文件大小超出范围,显示必须在0-2048 Bytes之间，我还以为是文件没有拷贝过去，于是大小是0。</p>
+
+<p>这时辉神出现了，他指出，2.megabytes不应该是2048啊。于是测试ActiveSupport，这个没问题，网上一搜，才发现，god这个gem重载了这个方法.于是2.megabytes变成了2048</p>
+
+<p>但是最终没有把god注销，而是在代码中直接使用了2<em>2048</em>2048</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -469,11 +522,15 @@ config.ignoreEmptyParagraph = false;</code></pre>
   
     <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/生活'>生活 (2)</a></li><li><a href='/blog/categories/程序猿'>程序猿 (1)</a></li><li><a href='/blog/categories/读书笔记'>读书笔记 (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/生活'>生活 (2)</a></li><li><a href='/blog/categories/程序猿'>程序猿 (2)</a></li><li><a href='/blog/categories/读书笔记'>读书笔记 (2)</a></li></ul>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai">ckeditor上传文件失败</a>
+      </li>
     
       <li class="post">
         <a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">微信背后的产品观</a>
@@ -489,10 +546,6 @@ config.ignoreEmptyParagraph = false;</code></pre>
     
       <li class="post">
         <a href="/blog/sha-men">厦门</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/qi-xing">骑行</a>
       </li>
     
   </ul>

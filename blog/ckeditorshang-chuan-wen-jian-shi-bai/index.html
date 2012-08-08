@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello World - 海岩咖啡的部落格</title>
+  <title>ckeditor上传文件失败 - 海岩咖啡的部落格</title>
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Rails: 3.2.6 使用的是Ckeditor的Rails Gem. 突然不能上传文件，控制台显示在上传插入数据库时直接rollback了 于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pishilong.github.com/blog/hello-world">
+  <link rel="canonical" href="http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -65,7 +64,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello World</h1>
+      <h1 class="entry-title">Ckeditor上传文件失败</h1>
     
     
       <p class="meta">
@@ -81,7 +80,7 @@
   
 
 
-<time datetime="2012-06-22T23:07:00+08:00" pubdate data-updated="true">2012年06月22日 23:07:00</time>
+<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true">2012年08月08日 11:17:00</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -90,7 +89,22 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>Rails: 3.2.6</p>
+
+<p>使用的是Ckeditor的Rails Gem.</p>
+
+<p>突然不能上传文件，控制台显示在上传插入数据库时直接rollback了</p>
+
+<p>于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset(asset)方法，</p>
+
+<p>将asset.save,改为asset.save!</p>
+
+<p>查看抛出的异常,是文件大小超出范围,显示必须在0-2048 Bytes之间，我还以为是文件没有拷贝过去，于是大小是0。</p>
+
+<p>这时辉神出现了，他指出，2.megabytes不应该是2048啊。于是测试ActiveSupport，这个没问题，网上一搜，才发现，god这个gem重载了这个方法.于是2.megabytes变成了2048</p>
+
+<p>但是最终没有把god注销，而是在代码中直接使用了2<em>2048</em>2048</p>
+
 </div>
 
 
@@ -113,8 +127,14 @@
   
 
 
-<time datetime="2012-06-22T23:07:00+08:00" pubdate data-updated="true">2012年06月22日 23:07:00</time>
+<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true">2012年08月08日 11:17:00</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/程序猿/'>程序猿</a>
+  
+</span>
 
 
     </p>
@@ -128,8 +148,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/wei-xin-bei-hou-de-chan-pin-guan" title="Previous Post: 微信背后的产品观">&laquo; 微信背后的产品观</a>
       
-        <a class="basic-alignment right" href="/blog/qi-xing" title="Next Post: 骑行">骑行 &raquo;</a>
       
     </p>
   </footer>
@@ -195,8 +215,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pishilong.github.com/blog/hello-world';
-        var disqus_url = 'http://pishilong.github.com/blog/hello-world';
+        var disqus_identifier = 'http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai';
+        var disqus_url = 'http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai';
         var disqus_script = 'embed.js';
       
     (function () {
