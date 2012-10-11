@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ckeditor的逆袭 - 海岩咖啡的部落格</title>
+  <title>软件工程_实践者的研究方法-ch4指导实践的原则 - 海岩咖啡的部落格</title>
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。 而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。 于是改用比较成熟的ckeditor，整合rails相当方便， &hellip;">
+  <meta name="description" content="Test
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pishilong.github.com/blog/ckeditorde-ni-xi">
+  <link rel="canonical" href="http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -64,7 +65,7 @@
   
   <header>
     
-      <h1 class="entry-title">Ckeditor的逆袭</h1>
+      <h1 class="entry-title">软件工程_实践者的研究方法-ch4指导实践的原则</h1>
     
     
       <p class="meta">
@@ -80,7 +81,7 @@
   
 
 
-<time datetime="2012-06-28T11:39:00+08:00" pubdate data-updated="true">2012年06月28日 11:39:00</time>
+<time datetime="2012-10-11T17:36:00+08:00" pubdate data-updated="true">2012年10月11日 17:36:00</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -89,50 +90,7 @@
   </header>
 
 
-<div class="entry-content"><p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
-
-<p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
-
-<p>于是改用比较成熟的<a href="https://github.com/galetahub/ckeditor">ckeditor</a>，整合rails相当方便，上传等也一应俱全,还提供ActiveRecord, Mongid等持久化支持，和<a href="https://github.com/thoughtbot/paperclip">paperclip</a>,<a href="https://github.com/jnicklas/carrierwave">carrierwave</a>上传插件的支持。</p>
-
-<pre><code>gem "ckeditor", "3.7.1"
-rails generate ckeditor:install --orm=active_record --backend=paperclip
-</code></pre>
-
-<p>一直使用很顺畅，直到碰到两个很恶心的问题:</p>
-
-<ul>
-  <li>
-    <p>ckeditor总会把内容自己套一层&lt;p&gt;标签</p>
-
-    <p>这是因为ckeditor对于换行有三种模式，默认是&lt;p&gt;,改成br模式或者div模式即可解决问题，在config.js中加入:</p>
-  </li>
-</ul>
-<div>
-  <pre><code class="ruby">config.enterMode = CKEDITOR.ENTER_BR;
-config.shiftEnterMode = CKEDITOR.ENTER_BR;</code></pre>
-</div>
-
-<ul>
-  <li>
-    <p>HTML里面本来&lt;table&gt;标签在<span>标签里面，在kindeditor里面，能正常显示在富文本编辑器里，但是ckeditor会自己把外面的<span>标签移除，然后内嵌到table里的文字周围。</span></span></p>
-
-    <p>原本以为是ckeditor自己怪异的行为，然后几乎花了一天时间去看ckeditor的源码以及详细设置，使用了很多方案:</p>
-  </li>
-</ul>
-<div>
-  <pre><code class="ruby">config.removePlugins = 'scayt';
-config.autoParagraph = false;
-config.ignoreEmptyParagraph = false;</code></pre>
-</div>
-
-<p>都不行，后来在一个帖子里看到，span标签属于inline element,而table属于block element,从规范和合理的角度出发,block是不能内嵌到inline element的。
-  所以ckeditor进行了检查并处理。确实在ckeditor的dtd中也对各类标签进行了定义</p>
-
-<p>ckeditor总的来说还是很不错，但是体积比Kindeditor稍大，如果不是特别的需求，我会选择kindeditor.</p>
-
-<p>下一篇着重讲下数学公式编辑器的集成，从官方的php移植到了rails上。</p>
-
+<div class="entry-content"><p>Test</p>
 </div>
 
 
@@ -155,14 +113,8 @@ config.ignoreEmptyParagraph = false;</code></pre>
   
 
 
-<time datetime="2012-06-28T11:39:00+08:00" pubdate data-updated="true">2012年06月28日 11:39:00</time>
+<time datetime="2012-10-11T17:36:00+08:00" pubdate data-updated="true">2012年10月11日 17:36:00</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/程序猿/'>程序猿</a>
-  
-</span>
 
 
     </p>
@@ -176,10 +128,8 @@ config.ignoreEmptyParagraph = false;</code></pre>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/yi-shi-wei-jing" title="Previous Post: 以史为镜">&laquo; 以史为镜</a>
+        <a class="basic-alignment left" href="/blog/ckeditorshang-chuan-wen-jian-shi-bai" title="Previous Post: ckeditor上传文件失败">&laquo; ckeditor上传文件失败</a>
       
-      
-        <a class="basic-alignment right" href="/blog/wei-xin-bei-hou-de-chan-pin-guan" title="Next Post: 微信背后的产品观">微信背后的产品观 &raquo;</a>
       
     </p>
   </footer>
@@ -245,8 +195,8 @@ config.ignoreEmptyParagraph = false;</code></pre>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pishilong.github.com/blog/ckeditorde-ni-xi';
-        var disqus_url = 'http://pishilong.github.com/blog/ckeditorde-ni-xi';
+        var disqus_identifier = 'http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze';
+        var disqus_url = 'http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze';
         var disqus_script = 'embed.js';
       
     (function () {

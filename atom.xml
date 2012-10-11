@@ -4,7 +4,7 @@
   <title><![CDATA[海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2012-08-08T11:26:13+08:00</updated>
+  <updated>2012-10-11T17:36:29+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[软件工程_实践者的研究方法-ch4指导实践的原则]]></title>
+    <link href="http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze"/>
+    <updated>2012-10-11T17:36:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze</id>
+    <content type="html"><![CDATA[<p>Test</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ckeditor上传文件失败]]></title>
