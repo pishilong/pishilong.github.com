@@ -4,7 +4,7 @@
   <title><![CDATA[海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2012-11-09T11:25:02+08:00</updated>
+  <updated>2012-12-07T12:05:48+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[设计一个系统，千万级用户，唯一ID]]></title>
+    <link href="http://pishilong.github.com/blog/qian-wan-yong-hu-wei-yi-id"/>
+    <updated>2012-12-07T10:53:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/qian-wan-yong-hu-wei-yi-id</id>
+    <content type="html"><![CDATA[<p>这个题目是来自@陈利人的微博，并且他推荐了一篇Flickr的文章<a href="http://code.flickr.com/2010/02/08/ticket-servers-distributed-unique-primary-keys-on-the-cheap/">Ticket Servers: Distributed Unique Primary Keys on the Cheap</a>，讲解他们的思路<br />
+这篇文章也主要从两部分入手，首先讨论下<a href="http://code.flickr.com/2010/02/08/ticket-servers-distributed-unique-primary-keys-on-the-cheap/">Flickr的文章</a>;然后再说说自己的思路。</p>
+
+<h3 id="ticket-servers-distributed-unique-primary-keys-on-the-cheap">Ticket Servers: Distributed Unique Primary Keys on the Cheap</h3>
+<blockquote>
+  <p>Sometimes we need to migrate data between databases, so we need our primary keys to be globally unique.<br />
+We’d love to go on using MySQL auto-incrementing columns for primary keys like everyone else, but MySQL can’t guarantee uniqueness across physical and logical databases.  </p>
+</blockquote>
+
+<p>原来，这篇文章的目的是对于MySQL集群，如何确保ID唯一.<br />
+接下来，文章讨论了为什么不使用GUIDs,原因是:GUIDs很大,在MySQL中索引效果不佳;而索引又是加速MySQL查询唯一的方法，所以索引大小是个关键问题，如果不能把索引都保存在内存中，那么实际上就失去了其价值。
+而本文讨论的Ticket Servers的连续性让我们在作报告或者Debug的时候更加直观，而且方便缓存.  </p>
+
+<p>MySQL在很久之前就发布了<a href="http://dev.mysql.com/doc/refman/5.0/en/replace.html">REPLACE INTO</a>的方法，他可以：
+&gt;REPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted.</p>
+
+<p>这个方法允许我们自动更新一个地方的一个单行，并获取一个新的自增长的ID。</p>
+
+<p>Flickr把以上几点整合起来，构建了Ticket Server,他就是一个纯粹的数据库服务，只有一个数据库，在那个库里面，有两个表，分别记录不同位数的ID。
+64位表结构如下: <br />
+{% codeblock lang:sql%}
+  CREATE TABLE <code>Tickets64</code> (<br />
+    <code>id</code> bigint(20) unsigned NOT NULL auto_increment,<br />
+    <code>stub</code> char(1) NOT NULL default ‘’,<br />
+    PRIMARY KEY  (<code>id</code>),<br />
+    UNIQUE KEY <code>stub</code> (<code>stub</code>)<br />
+  )ENGINE=MyISAM<br />
+{% codeblock %}<br />
+当需要一个新的全局64位ID时，使用如下SQL:<br />
+{% codeblock lang:sql%}
+  REPLACE INTO Tickets64 (stub) VALUES (‘a’);
+  SELECT LAST_INSERT_ID();
+{% codeblock %}</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PMP HeadFirst CH2]]></title>
