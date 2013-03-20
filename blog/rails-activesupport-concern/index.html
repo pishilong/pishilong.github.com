@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Rails ActiveSupport::Concern - 海岩咖啡的部落格</title>
+  <title>Rails ActiveSupport::Concern Object doesn't support#inspect - 海岩咖啡的部落格</title>
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题. 背景 树形数据结构在系统中越来越多，而他的很多特性是可以复用的，如果对每一个model都定义相同的方法， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,7 +64,7 @@
   
   <header>
     
-      <h1 class="entry-title">Rails ActiveSupport::Concern</h1>
+      <h1 class="entry-title">Rails ActiveSupport::Concern Object Doesn't Support#inspect</h1>
     
     
       <p class="meta">
@@ -90,7 +89,208 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题.</p>
+
+<h1 id="section">背景</h1>
+
+<p>树形数据结构在系统中越来越多，而他的很多特性是可以复用的，如果对每一个model都定义相同的方法，声明相同的asscoiation肯定是不科学，于是打算将其抽取出来.</p>
+
+<p>第一个方案打算使用继承,使用通用类继承ActiveRecord::Base 然后其他的树形类再继承这个通用类</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="no">TreeBase</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+</span><span class="line">  <span class="k">end</span>
+</span><span class="line">  <span class="no">GrammarTree</span> <span class="o">&lt;</span> <span class="no">TreeBase</span>
+</span><span class="line">  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>但是这样会报错，提示在数据库中找不到tree_bases这张表，这是肯定的，于是根据网上的方法，把TreeBase设置成没有表与其对应的虚类，但是Rails还是不吃这一套.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="no">TreeBase</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+</span><span class="line">    <span class="nb">self</span><span class="o">.</span><span class="n">absract_class</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class="line">    <span class="vi">@columns</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class="line">  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>于是打算采用module的方案，<a href="http://ruby-china.org/topics/7709">Rails4重大设计决策：“胖”Model用ActiveSupport::Concern瘦身</a>, 那就先采用这个做法试验一下.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="k">module</span> <span class="nn">TreeBase</span>
+</span><span class="line">  <span class="kp">extend</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
+</span><span class="line">
+</span><span class="line">  <span class="n">included</span> <span class="k">do</span>
+</span><span class="line">    <span class="n">attr_accessible</span> <span class="ss">:p_id</span><span class="p">,</span> <span class="ss">:_name</span><span class="p">,</span> <span class="ss">:order_idx</span><span class="p">,</span> <span class="ss">:level</span><span class="p">,</span> <span class="ss">:overall_idx</span>
+</span><span class="line">    <span class="n">belongs_to</span> <span class="ss">:parent</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="p">:</span> <span class="s2">&quot;p_id&quot;</span>
+</span><span class="line">    <span class="n">has_many</span> <span class="ss">:children</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="p">:</span> <span class="s2">&quot;p_id&quot;</span><span class="p">,</span> <span class="n">dependent</span><span class="p">:</span> <span class="ss">:restrict</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="ss">:order_idx</span>
+</span><span class="line">    <span class="n">validates</span> <span class="ss">:node_name</span><span class="p">,</span> <span class="n">presence</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">default_value_for</span> <span class="ss">:level</span> <span class="k">do</span>
+</span><span class="line">      <span class="n">parent</span><span class="o">.</span><span class="n">nil?</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="p">(</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">    <span class="n">default_value_for</span> <span class="ss">:order_idx</span> <span class="k">do</span>
+</span><span class="line">      <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class="line">        <span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">p_id</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="ss">:order_idx</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class="line">      <span class="k">else</span>
+</span><span class="line">        <span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="ss">:order_idx</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class="line">      <span class="k">end</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">    <span class="n">default_value_for</span> <span class="ss">:overall_idx</span> <span class="k">do</span>
+</span><span class="line">      <span class="nb">self</span><span class="o">.</span><span class="n">compute_overall_idx</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">after_save</span> <span class="ss">:reset_index</span>
+</span><span class="line">  <span class="k">end</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">module</span> <span class="nn">ClassMethods</span>
+</span><span class="line">  <span class="k">end</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">module</span> <span class="nn">InstanceMethods</span>
+</span><span class="line">  <span class="k">end</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>以上代码的思路很容看清楚，树形结构肯定有<code>parent</code>,也有<code>children</code>,而<code>TreeBase</code>只是提供一个处理框架，具体的表还是得看<code>include</code>了这个<code>module</code>的类，所以在<code>class_name</code>中用的是<code>self.class.name</code>.
+同理，在查找节点时，也用的<code>self.class.where(p_id: nil)</code></p>
+
+<h1 id="section-1">问题</h1>
+
+<p>这个时候，问题发生了，找打一个node没问题，但是<code>node.parent</code>的时候，就会报错<code>Object doesn't support#inspect</code>.</p>
+
+<p>最终的原因在于<code>module</code>中<code>included</code>,<code>InstanceMethods</code>,<code>ClassMethods</code>的上下文不一样，<code>InstanceMethods</code>定义的是实例方法，所以默认的上下文就是实例，于是可以这样定义：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="k">module</span> <span class="nn">TreeBase</span>
+</span><span class="line">  <span class="kp">extend</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
+</span><span class="line">  <span class="k">module</span> <span class="nn">InstanceMethods</span>
+</span><span class="line">   <span class="c1">#判断是否有子节点</span>
+</span><span class="line">    <span class="k">def</span> <span class="nf">has_children?</span>
+</span><span class="line">      <span class="n">children</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">
+</span><span class="line">    <span class="c1">#计算全局顺序</span>
+</span><span class="line">    <span class="k">def</span> <span class="nf">compute_overall_idx</span>
+</span><span class="line">      <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class="line">        <span class="n">order_idx</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</span><span class="line">      <span class="k">else</span>
+</span><span class="line">        <span class="s2">&quot;</span><span class="si">#{</span><span class="n">parent</span><span class="o">.</span><span class="n">overall_idx</span><span class="si">}</span><span class="s2">_&quot;</span> <span class="o">+</span> <span class="n">order_idx</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</span><span class="line">      <span class="k">end</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">  <span class="k">end</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><code>children</code>这样的属性或者实例方法能直接调用.</p>
+
+<p>而在<code>included</code>中，上下文是具体的类，所以<code>self</code>是形如<code>GrammarTree</code>这样的具体类,因此<code>self.class</code>就是<code>Class</code>了，而<code>self.class.name</code>就是<code>'Class'</code>，而我们期待的实际是<code>'GrammarTree'</code>，</p>
+
+<p>就这样，出现了<code>Object doesn't support#inspect</code>这个问题，衍生出来的，如果执行<code>node.has_children?</code>，因为<code>node.children</code>已经跪了，再来<code>chidlren.count &gt; 0 </code>就会报错<code>undefined method 'scoped' for Class:Class</code>。</p>
+
+<h1 id="section-2">解决</h1>
+
+<p>把<code>self.class.name</code>改成<code>name</code>,由于已经处于类的上下文，所以直接用<code>name</code>即可.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="n">included</span> <span class="k">do</span>
+</span><span class="line">    <span class="n">attr_accessible</span> <span class="ss">:p_id</span><span class="p">,</span> <span class="ss">:node_name</span><span class="p">,</span> <span class="ss">:order_idx</span><span class="p">,</span> <span class="ss">:level</span><span class="p">,</span> <span class="ss">:overall_idx</span>
+</span><span class="line">    <span class="n">belongs_to</span> <span class="ss">:parent</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="p">:</span> <span class="s2">&quot;p_id&quot;</span>
+</span><span class="line">    <span class="n">has_many</span> <span class="ss">:children</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="p">:</span> <span class="s2">&quot;p_id&quot;</span><span class="p">,</span> <span class="n">dependent</span><span class="p">:</span> <span class="ss">:restrict</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="ss">:order_idx</span>
+</span><span class="line">    <span class="n">validates</span> <span class="ss">:node_name</span><span class="p">,</span> <span class="n">presence</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">default_value_for</span> <span class="ss">:level</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+</span><span class="line">      <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">nil?</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">    <span class="n">default_value_for</span> <span class="ss">:order_idx</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+</span><span class="line">      <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class="line">        <span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="n">p_id</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="ss">:order_idx</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class="line">      <span class="k">else</span>
+</span><span class="line">        <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="ss">:order_idx</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class="line">      <span class="k">end</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">    <span class="n">default_value_for</span> <span class="ss">:overall_idx</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+</span><span class="line">      <span class="n">node</span><span class="o">.</span><span class="n">compute_overall_idx</span>
+</span><span class="line">    <span class="k">end</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">after_save</span> <span class="ss">:reset_index</span>
+</span><span class="line">  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>其中，<code>default_value_for</code>是设置对象默认值的，其上下文应该是实例对象而不是类，所以需要在代码块中传入<code>node</code>.</p>
 </div>
 
 
@@ -160,7 +360,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/rails-activesupport-concern">Rails ActiveSupport::Concern</a>
+        <a href="/blog/rails-activesupport-concern">Rails ActiveSupport::Concern Object doesn't support#inspect</a>
       </li>
     
       <li class="post">

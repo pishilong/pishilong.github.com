@@ -4,7 +4,7 @@
   <title><![CDATA[分类: 程序猿 | 海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/blog/categories/程序猿/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2013-03-20T11:26:37+08:00</updated>
+  <updated>2013-03-20T12:22:20+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -14,11 +14,134 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Rails ActiveSupport::Concern]]></title>
+    <title type="html"><![CDATA[Rails ActiveSupport::Concern Object doesn't support#inspect]]></title>
     <link href="http://pishilong.github.com/blog/rails-activesupport-concern"/>
     <updated>2013-03-20T11:06:00+08:00</updated>
     <id>http://pishilong.github.com/blog/rails-activesupport-concern</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题.</p>
+
+<h1 id="section">背景</h1>
+
+<p>树形数据结构在系统中越来越多，而他的很多特性是可以复用的，如果对每一个model都定义相同的方法，声明相同的asscoiation肯定是不科学，于是打算将其抽取出来.</p>
+
+<p>第一个方案打算使用继承,使用通用类继承ActiveRecord::Base 然后其他的树形类再继承这个通用类</p>
+
+<p><code>ruby
+  TreeBase &lt; ActiveRecord::Base
+  end
+  GrammarTree &lt; TreeBase
+  end
+</code></p>
+
+<p>但是这样会报错，提示在数据库中找不到tree_bases这张表，这是肯定的，于是根据网上的方法，把TreeBase设置成没有表与其对应的虚类，但是Rails还是不吃这一套.</p>
+
+<p><code>ruby
+  TreeBase &lt; ActiveRecord::Base
+    self.absract_class = true
+    @columns = []
+  end
+</code></p>
+
+<p>于是打算采用module的方案，<a href="http://ruby-china.org/topics/7709">Rails4重大设计决策：“胖”Model用ActiveSupport::Concern瘦身</a>, 那就先采用这个做法试验一下.</p>
+
+<p>```ruby
+module TreeBase
+  extend ActiveSupport::Concern</p>
+
+<p>included do
+    attr_accessible :p_id, :_name, :order_idx, :level, :overall_idx
+    belongs_to :parent, class_name: self.class.name, foreign_key: “p_id”
+    has_many :children, class_name: self.class.name, foreign_key: “p_id”, dependent: :restrict, order: :order_idx
+    validates :node_name, presence: true</p>
+
+<pre><code>default_value_for :level do
+  parent.nil? ? 0 : (.parent.level + 1)
+end
+default_value_for :order_idx do
+  if parent.nil?
+    (self.class.where(p_id: nil).maximum(:order_idx) || 0) + 1
+  else
+    (parent.children.maximum(:order_idx) || 0) + 1
+  end
+end
+default_value_for :overall_idx do
+  self.compute_overall_idx
+end
+
+after_save :reset_index   end
+</code></pre>
+
+<p>module ClassMethods
+  end</p>
+
+<p>module InstanceMethods
+  end
+end
+```</p>
+
+<p>以上代码的思路很容看清楚，树形结构肯定有<code>parent</code>,也有<code>children</code>,而<code>TreeBase</code>只是提供一个处理框架，具体的表还是得看<code>include</code>了这个<code>module</code>的类，所以在<code>class_name</code>中用的是<code>self.class.name</code>.
+同理，在查找节点时，也用的<code>self.class.where(p_id: nil)</code></p>
+
+<h1 id="section-1">问题</h1>
+
+<p>这个时候，问题发生了，找打一个node没问题，但是<code>node.parent</code>的时候，就会报错<code>Object doesn't support#inspect</code>.</p>
+
+<p>最终的原因在于<code>module</code>中<code>included</code>,<code>InstanceMethods</code>,<code>ClassMethods</code>的上下文不一样，<code>InstanceMethods</code>定义的是实例方法，所以默认的上下文就是实例，于是可以这样定义：</p>
+
+<p>```ruby
+module TreeBase
+  extend ActiveSupport::Concern
+  module InstanceMethods
+   #判断是否有子节点
+    def has_children?
+      children.count &gt; 0
+    end</p>
+
+<pre><code>#计算全局顺序
+def compute_overall_idx
+  if parent.nil?
+    order_idx.to_s.rjust(2,'0')
+  else
+    "#{parent.overall_idx}_" + order_idx.to_s.rjust(2,'0')
+  end
+end   end end ```
+</code></pre>
+
+<p><code>children</code>这样的属性或者实例方法能直接调用.</p>
+
+<p>而在<code>included</code>中，上下文是具体的类，所以<code>self</code>是形如<code>GrammarTree</code>这样的具体类,因此<code>self.class</code>就是<code>Class</code>了，而<code>self.class.name</code>就是<code>'Class'</code>，而我们期待的实际是<code>'GrammarTree'</code>，</p>
+
+<p>就这样，出现了<code>Object doesn't support#inspect</code>这个问题，衍生出来的，如果执行<code>node.has_children?</code>，因为<code>node.children</code>已经跪了，再来<code>chidlren.count &gt; 0 </code>就会报错<code>undefined method 'scoped' for Class:Class</code>。</p>
+
+<h1 id="section-2">解决</h1>
+
+<p>把<code>self.class.name</code>改成<code>name</code>,由于已经处于类的上下文，所以直接用<code>name</code>即可.</p>
+
+<p>```ruby
+  included do
+    attr_accessible :p_id, :node_name, :order_idx, :level, :overall_idx
+    belongs_to :parent, class_name: name, foreign_key: “p_id”
+    has_many :children, class_name: name, foreign_key: “p_id”, dependent: :restrict, order: :order_idx
+    validates :node_name, presence: true</p>
+
+<pre><code>default_value_for :level do |node|
+  node.parent.nil? ? 0 : (node.parent.level + 1)
+end
+default_value_for :order_idx do |node|
+  if node.parent.nil?
+    (where(p_id: nil).maximum(:order_idx) || 0) + 1
+  else
+    (node.parent.children.maximum(:order_idx) || 0) + 1
+  end
+end
+default_value_for :overall_idx do |node|
+  node.compute_overall_idx
+end
+
+after_save :reset_index   end ```
+</code></pre>
+
+<p>其中，<code>default_value_for</code>是设置对象默认值的，其上下文应该是实例对象而不是类，所以需要在代码块中传入<code>node</code>.</p>
 ]]></content>
   </entry>
   
