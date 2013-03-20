@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[海岩咖啡的部落格]]></title>
-  <link href="http://pishilong.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[分类: 读书笔记 | 海岩咖啡的部落格]]></title>
+  <link href="http://pishilong.github.com/blog/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
   <updated>2013-03-20T11:11:15+08:00</updated>
   <id>http://pishilong.github.com/</id>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Rails ActiveSupport::Concern]]></title>
-    <link href="http://pishilong.github.com/blog/rails-activesupport-concern"/>
-    <updated>2013-03-20T11:06:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/rails-activesupport-concern</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[PMP HeadFirst CH2]]></title>
@@ -57,39 +48,6 @@
 
  A program is a group of projects that should be managed together because of interdependencies.
 </code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[软件工程_实践者的研究方法-ch4指导实践的原则]]></title>
-    <link href="http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze"/>
-    <updated>2012-10-11T17:36:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze</id>
-    <content type="html"><![CDATA[<p>Test</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ckeditor上传文件失败]]></title>
-    <link href="http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai"/>
-    <updated>2012-08-08T11:17:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</id>
-    <content type="html"><![CDATA[<p>Rails: 3.2.6</p>
-
-<p>使用的是Ckeditor的Rails Gem.</p>
-
-<p>突然不能上传文件，控制台显示在上传插入数据库时直接rollback了</p>
-
-<p>于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset(asset)方法，</p>
-
-<p>将asset.save,改为asset.save!</p>
-
-<p>查看抛出的异常,是文件大小超出范围,显示必须在0-2048 Bytes之间，我还以为是文件没有拷贝过去，于是大小是0。</p>
-
-<p>这时辉神出现了，他指出，2.megabytes不应该是2048啊。于是测试ActiveSupport，这个没问题，网上一搜，才发现，god这个gem重载了这个方法.于是2.megabytes变成了2048</p>
-
-<p>但是最终没有把god注销，而是在代码中直接使用了2<em>2048</em>2048</p>
 
 ]]></content>
   </entry>
@@ -186,58 +144,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[ckeditor的逆袭]]></title>
-    <link href="http://pishilong.github.com/blog/ckeditorde-ni-xi"/>
-    <updated>2012-06-28T11:39:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/ckeditorde-ni-xi</id>
-    <content type="html"><![CDATA[<p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
-
-<p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
-
-<p>于是改用比较成熟的<a href="https://github.com/galetahub/ckeditor">ckeditor</a>，整合rails相当方便，上传等也一应俱全,还提供ActiveRecord, Mongid等持久化支持，和<a href="https://github.com/thoughtbot/paperclip">paperclip</a>,<a href="https://github.com/jnicklas/carrierwave">carrierwave</a>上传插件的支持。</p>
-
-<pre><code>gem "ckeditor", "3.7.1"
-rails generate ckeditor:install --orm=active_record --backend=paperclip
-</code></pre>
-
-<p>一直使用很顺畅，直到碰到两个很恶心的问题:</p>
-
-<ul>
-  <li>
-    <p>ckeditor总会把内容自己套一层&lt;p&gt;标签</p>
-
-    <p>这是因为ckeditor对于换行有三种模式，默认是&lt;p&gt;,改成br模式或者div模式即可解决问题，在config.js中加入:</p>
-  </li>
-</ul>
-<div>
-  <pre><code class="ruby">config.enterMode = CKEDITOR.ENTER_BR;
-config.shiftEnterMode = CKEDITOR.ENTER_BR;</code></pre>
-</div>
-
-<ul>
-  <li>
-    <p>HTML里面本来&lt;table&gt;标签在<span>标签里面，在kindeditor里面，能正常显示在富文本编辑器里，但是ckeditor会自己把外面的<span>标签移除，然后内嵌到table里的文字周围。</span></span></p>
-
-    <p>原本以为是ckeditor自己怪异的行为，然后几乎花了一天时间去看ckeditor的源码以及详细设置，使用了很多方案:</p>
-  </li>
-</ul>
-<div>
-  <pre><code class="ruby">config.removePlugins = 'scayt';
-config.autoParagraph = false;
-config.ignoreEmptyParagraph = false;</code></pre>
-</div>
-
-<p>都不行，后来在一个帖子里看到，span标签属于inline element,而table属于block element,从规范和合理的角度出发,block是不能内嵌到inline element的。
-  所以ckeditor进行了检查并处理。确实在ckeditor的dtd中也对各类标签进行了定义</p>
-
-<p>ckeditor总的来说还是很不错，但是体积比Kindeditor稍大，如果不是特别的需求，我会选择kindeditor.</p>
-
-<p>下一篇着重讲下数学公式编辑器的集成，从官方的php移植到了rails上。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[以史为镜]]></title>
     <link href="http://pishilong.github.com/blog/yi-shi-wei-jing"/>
     <updated>2012-06-28T00:39:00+08:00</updated>
@@ -274,46 +180,6 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
 <p>编年体到纪传体。都体会一下。</p>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[厦门]]></title>
-    <link href="http://pishilong.github.com/blog/sha-men"/>
-    <updated>2012-06-24T22:45:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/sha-men</id>
-    <content type="html"><![CDATA[<p>以“厦门”为题，一下笔，就不由自主地想说“厦门是我一直都想去的地方”。但是，却不是。</p>
-
-<p>厦门，一直被广为传颂着，厦门的空气，鼓浪屿上的精致小店，各种适合步行的观光路线，美丽的海滩，漂亮的海岸线。但是这种铺天盖地的宣传和赞叹，让我不由得反感，哪怕真的如梦似幻。</p>
-
-<p>以上烂俗的映像，是我对厦门下意识的感觉。</p>
-
-<p>其次的感觉是，秦瑞林在厦大。</p>
-
-<p>他是本科时候成绩最好的家伙，报送到了厦大计算机系，如果他成绩不好，那就天理不容了。原因有二：</p>
-
-<p>其一，他学习态度实在是太好了，感觉时时刻刻都活在高考拼搏的岁月。开学第一天，他就能高高兴兴地左手拎着象征性的塑料袋，里面装着崭新的新课本，右手拎着代表性的硕大无比的水壶，去自习。由于习性的差异，基本和他难以照面，除了上课时间。</p>
-
-<p>其二，他有一般成绩特别好的同学的一个共性，或多或少存在些癖好。例如塑料袋，例如水壶，例如无论早晚的一声“早上好”。一天之计在于晨，在他身上得到淋漓的体现。他就像早上八九点钟的太阳，时时刻刻都像朝阳般地绽放着自己的智慧，一次有一次地逼近满分。也毫无顾忌地在班级茶话会时，鄙视着大家，“如果我不是高三的
-  时候看了200部电影，我就不会比高二参加高考考得还差，来到南师。”除了掌声，我不知道如何表达我的心情了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[骑行]]></title>
-    <link href="http://pishilong.github.com/blog/qi-xing"/>
-    <updated>2012-06-23T01:26:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/qi-xing</id>
-    <content type="html"><![CDATA[<p>今天骑了16KM+,当时不觉得累，现在大腿都是滚烫的。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://pishilong.github.com/blog/hello-world"/>
-    <updated>2012-06-22T23:07:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/hello-world</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   

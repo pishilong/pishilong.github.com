@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类: 程序猿 | 海岩咖啡的部落格]]></title>
+  <link href="http://pishilong.github.com/blog/categories/%E7%A8%8B%E5%BA%8F%E7%8C%BF/atom.xml" rel="self"/>
+  <link href="http://pishilong.github.com/"/>
+  <updated>2013-03-20T11:11:15+08:00</updated>
+  <id>http://pishilong.github.com/</id>
+  <author>
+    <name><![CDATA[海岩咖啡]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rails ActiveSupport::Concern]]></title>
+    <link href="http://pishilong.github.com/blog/rails-activesupport-concern"/>
+    <updated>2013-03-20T11:06:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/rails-activesupport-concern</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ckeditor上传文件失败]]></title>
+    <link href="http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai"/>
+    <updated>2012-08-08T11:17:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</id>
+    <content type="html"><![CDATA[<p>Rails: 3.2.6</p>
+
+<p>使用的是Ckeditor的Rails Gem.</p>
+
+<p>突然不能上传文件，控制台显示在上传插入数据库时直接rollback了</p>
+
+<p>于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset(asset)方法，</p>
+
+<p>将asset.save,改为asset.save!</p>
+
+<p>查看抛出的异常,是文件大小超出范围,显示必须在0-2048 Bytes之间，我还以为是文件没有拷贝过去，于是大小是0。</p>
+
+<p>这时辉神出现了，他指出，2.megabytes不应该是2048啊。于是测试ActiveSupport，这个没问题，网上一搜，才发现，god这个gem重载了这个方法.于是2.megabytes变成了2048</p>
+
+<p>但是最终没有把god注销，而是在代码中直接使用了2<em>2048</em>2048</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ckeditor的逆袭]]></title>
+    <link href="http://pishilong.github.com/blog/ckeditorde-ni-xi"/>
+    <updated>2012-06-28T11:39:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/ckeditorde-ni-xi</id>
+    <content type="html"><![CDATA[<p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
+
+<p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
+
+<p>于是改用比较成熟的<a href="https://github.com/galetahub/ckeditor">ckeditor</a>，整合rails相当方便，上传等也一应俱全,还提供ActiveRecord, Mongid等持久化支持，和<a href="https://github.com/thoughtbot/paperclip">paperclip</a>,<a href="https://github.com/jnicklas/carrierwave">carrierwave</a>上传插件的支持。</p>
+
+<pre><code>gem "ckeditor", "3.7.1"
+rails generate ckeditor:install --orm=active_record --backend=paperclip
+</code></pre>
+
+<p>一直使用很顺畅，直到碰到两个很恶心的问题:</p>
+
+<ul>
+  <li>
+    <p>ckeditor总会把内容自己套一层&lt;p&gt;标签</p>
+
+    <p>这是因为ckeditor对于换行有三种模式，默认是&lt;p&gt;,改成br模式或者div模式即可解决问题，在config.js中加入:
+<div>
+  <pre><code class='ruby'>config.enterMode = CKEDITOR.ENTER_BR;
+config.shiftEnterMode = CKEDITOR.ENTER_BR;</code></pre>
+</div>
+</p>
+  </li>
+  <li>
+    <p>HTML里面本来&lt;table&gt;标签在<span>标签里面，在kindeditor里面，能正常显示在富文本编辑器里，但是ckeditor会自己把外面的<span>标签移除，然后内嵌到table里的文字周围。</span></span></p>
+
+    <p>原本以为是ckeditor自己怪异的行为，然后几乎花了一天时间去看ckeditor的源码以及详细设置，使用了很多方案:
+<div>
+  <pre><code class='ruby'>config.removePlugins = ‘scayt’;
+config.autoParagraph = false;
+config.ignoreEmptyParagraph = false;</code></pre>
+</div>
+</p>
+
+    <p>都不行，后来在一个帖子里看到，span标签属于inline element,而table属于block element,从规范和合理的角度出发,block是不能内嵌到inline element的。
+所以ckeditor进行了检查并处理。确实在ckeditor的dtd中也对各类标签进行了定义</p>
+  </li>
+</ul>
+
+<p>ckeditor总的来说还是很不错，但是体积比Kindeditor稍大，如果不是特别的需求，我会选择kindeditor.</p>
+
+<p>下一篇着重讲下数学公式编辑器的集成，从官方的php移植到了rails上。</p>
+
+]]></content>
+  </entry>
+  
+</feed>
