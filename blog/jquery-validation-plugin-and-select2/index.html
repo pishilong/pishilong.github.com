@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>软件工程_实践者的研究方法-ch4指导实践的原则 - 海岩咖啡的部落格</title>
+  <title>jquery validation plugin and select2 - 海岩咖啡的部落格</title>
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="Test
-">
+  <meta name="description" content="Jquery Validation Plugin是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。 Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze">
+  <link rel="canonical" href="http://pishilong.github.com/blog/jquery-validation-plugin-and-select2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -65,7 +64,7 @@
   
   <header>
     
-      <h1 class="entry-title">软件工程_实践者的研究方法-ch4指导实践的原则</h1>
+      <h1 class="entry-title">Jquery Validation Plugin and Select2</h1>
     
     
       <p class="meta">
@@ -81,7 +80,7 @@
   
 
 
-<time datetime="2012-10-11T17:36:00+08:00" pubdate data-updated="true">2012年10月11日 17:36:00</time>
+<time datetime="2013-03-29T11:18:00+08:00" pubdate data-updated="true">2013年03月29日 11:18:00</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -90,7 +89,31 @@
   </header>
 
 
-<div class="entry-content"><p>Test</p>
+<div class="entry-content"><p><a href="http://docs.jquery.com/Plugins/Validation">Jquery Validation Plugin</a>是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。</p>
+
+<p>Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时，select2就无法验证了。</p>
+
+<p>解决方案是：在初始化validator时，设置ignore参数</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="vg">$form</span><span class="o">.</span><span class="n">validate</span>
+</span><span class="line">  <span class="n">rules</span><span class="p">:</span>
+</span><span class="line">    <span class="s1">&#39;user[channel]&#39;</span><span class="p">:</span>
+</span><span class="line">      <span class="n">required</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class="line">  <span class="n">messages</span><span class="p">:</span>
+</span><span class="line">    <span class="s1">&#39;user[channel]&#39;</span><span class="p">:</span>
+</span><span class="line">      <span class="n">required</span><span class="p">:</span> <span class="s1">&#39;请选择频道&#39;</span>
+</span><span class="line">  <span class="c1">#select2把真正的select隐藏了，而jquery validator会忽略需要特殊处理</span>
+</span><span class="line">  <span class="n">ignore</span><span class="p">:</span> <span class="s1">&#39;input[type=hidden]&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 </div>
 
 
@@ -113,8 +136,14 @@
   
 
 
-<time datetime="2012-10-11T17:36:00+08:00" pubdate data-updated="true">2012年10月11日 17:36:00</time>
+<time datetime="2013-03-29T11:18:00+08:00" pubdate data-updated="true">2013年03月29日 11:18:00</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/程序猿/'>程序猿</a>
+  
+</span>
 
 
     </p>
@@ -128,10 +157,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/ckeditorshang-chuan-wen-jian-shi-bai" title="Previous Post: ckeditor上传文件失败">&laquo; ckeditor上传文件失败</a>
+        <a class="basic-alignment left" href="/blog/rails-activesupport-concern" title="Previous Post: Rails ActiveSupport::Concern Object doesn't support#inspect">&laquo; Rails ActiveSupport::Concern Object doesn't support#inspect</a>
       
-      
-        <a class="basic-alignment right" href="/blog/pmp-headfirst-ch2" title="Next Post: PMP HeadFirst CH2">PMP HeadFirst CH2 &raquo;</a>
       
     </p>
   </footer>
@@ -197,8 +224,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze';
-        var disqus_url = 'http://pishilong.github.com/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze';
+        var disqus_identifier = 'http://pishilong.github.com/blog/jquery-validation-plugin-and-select2';
+        var disqus_url = 'http://pishilong.github.com/blog/jquery-validation-plugin-and-select2';
         var disqus_script = 'embed.js';
       
     (function () {

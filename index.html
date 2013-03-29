@@ -9,7 +9,7 @@
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题. 背景 树形数据结构在系统中越来越多，而他的很多特性是可以复用的，如果对每一个model都定义相同的方法， &hellip;">
+  <meta name="description" content="Jquery Validation Plugin是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。 Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -61,6 +61,68 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/jquery-validation-plugin-and-select2">Jquery Validation Plugin and Select2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-29T11:18:00+08:00" pubdate data-updated="true">2013年03月29日 11:18:00</time>
+        
+         | <a href="/blog/jquery-validation-plugin-and-select2#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://docs.jquery.com/Plugins/Validation">Jquery Validation Plugin</a>是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。</p>
+
+<p>Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时，select2就无法验证了。</p>
+
+<p>解决方案是：在初始化validator时，设置ignore参数</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="vg">$form</span><span class="o">.</span><span class="n">validate</span>
+</span><span class="line">  <span class="n">rules</span><span class="p">:</span>
+</span><span class="line">    <span class="s1">&#39;user[channel]&#39;</span><span class="p">:</span>
+</span><span class="line">      <span class="n">required</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class="line">  <span class="n">messages</span><span class="p">:</span>
+</span><span class="line">    <span class="s1">&#39;user[channel]&#39;</span><span class="p">:</span>
+</span><span class="line">      <span class="n">required</span><span class="p">:</span> <span class="s1">&#39;请选择频道&#39;</span>
+</span><span class="line">  <span class="c1">#select2把真正的select隐藏了，而jquery validator会忽略需要特殊处理</span>
+</span><span class="line">  <span class="n">ignore</span><span class="p">:</span> <span class="s1">&#39;input[type=hidden]&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -819,45 +881,9 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/hello-world">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-22T23:07:00+08:00" pubdate data-updated="true">2012年06月22日 23:07:00</time>
-        
-         | <a href="/blog/hello-world#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -867,11 +893,15 @@ config.ignoreEmptyParagraph = false;</code></pre>
   
     <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/生活'>生活 (2)</a></li><li><a href='/blog/categories/程序猿'>程序猿 (3)</a></li><li><a href='/blog/categories/读书笔记'>读书笔记 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/生活'>生活 (2)</a></li><li><a href='/blog/categories/程序猿'>程序猿 (4)</a></li><li><a href='/blog/categories/读书笔记'>读书笔记 (3)</a></li></ul>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/jquery-validation-plugin-and-select2">jquery validation plugin and select2</a>
+      </li>
     
       <li class="post">
         <a href="/blog/rails-activesupport-concern">Rails ActiveSupport::Concern Object doesn&#8217;t support#inspect</a>
@@ -887,10 +917,6 @@ config.ignoreEmptyParagraph = false;</code></pre>
     
       <li class="post">
         <a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai">ckeditor上传文件失败</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">微信背后的产品观</a>
       </li>
     
   </ul>

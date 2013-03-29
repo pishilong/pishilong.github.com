@@ -4,7 +4,7 @@
   <title><![CDATA[海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2013-03-20T12:22:20+08:00</updated>
+  <updated>2013-03-29T11:26:21+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[jquery validation plugin and select2]]></title>
+    <link href="http://pishilong.github.com/blog/jquery-validation-plugin-and-select2"/>
+    <updated>2013-03-29T11:18:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/jquery-validation-plugin-and-select2</id>
+    <content type="html"><![CDATA[<p><a href="http://docs.jquery.com/Plugins/Validation">Jquery Validation Plugin</a>是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。</p>
+
+<p>Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时，select2就无法验证了。</p>
+
+<p>解决方案是：在初始化validator时，设置ignore参数</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="vg">$form</span><span class="o">.</span><span class="n">validate</span>
+</span><span class="line">  <span class="n">rules</span><span class="p">:</span>
+</span><span class="line">    <span class="s1">&#39;user[channel]&#39;</span><span class="p">:</span>
+</span><span class="line">      <span class="n">required</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class="line">  <span class="n">messages</span><span class="p">:</span>
+</span><span class="line">    <span class="s1">&#39;user[channel]&#39;</span><span class="p">:</span>
+</span><span class="line">      <span class="n">required</span><span class="p">:</span> <span class="s1">&#39;请选择频道&#39;</span>
+</span><span class="line">  <span class="c1">#select2把真正的select隐藏了，而jquery validator会忽略需要特殊处理</span>
+</span><span class="line">  <span class="n">ignore</span><span class="p">:</span> <span class="s1">&#39;input[type=hidden]&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rails ActiveSupport::Concern Object doesn't support#inspect]]></title>
