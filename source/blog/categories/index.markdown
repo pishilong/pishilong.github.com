@@ -2,9 +2,9 @@
 layout: page
 title: "Categories"
 date: 2013-12-13 11:13
-comments: true
-sharing: true
-footer: true
+comments: false
+sharing: false
+footer: false
 ---
 # 分类
 

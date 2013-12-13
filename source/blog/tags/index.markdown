@@ -2,9 +2,9 @@
 layout: page
 title: "tags"
 date: 2013-12-13 13:01
-comments: true
-sharing: true
-footer: true
+comments: false
+sharing: false
+footer: false
 ---
 # 标签
 
