@@ -3,7 +3,7 @@ layout: post
 title: "以史为镜"
 date: 2012-06-28 00:39
 comments: true
-categories: [读书笔记] 
+categories: ['读书','历史']
 ---
 我记得"以史为镜"，因为一篇文章。
 

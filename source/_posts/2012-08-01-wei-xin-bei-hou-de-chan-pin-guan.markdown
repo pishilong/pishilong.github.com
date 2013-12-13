@@ -3,7 +3,7 @@ layout: post
 title: "微信背后的产品观"
 date: 2012-08-01 09:46
 comments: true
-categories: [读书笔记] 
+categories: ['产品']
 ---
 http://www.geekpark.net/read/view/161904
 

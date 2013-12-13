@@ -3,7 +3,7 @@ layout: post
 title: "ckeditor上传文件失败"
 date: 2012-08-08 11:17
 comments: true
-categories: [程序猿] 
+categories: ['技术']
 ---
 Rails: 3.2.6
 

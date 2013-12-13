@@ -3,7 +3,7 @@ layout: post
 title: "ckeditor的逆袭"
 date: 2012-06-28 11:39
 comments: true
-categories: [程序猿]
+categories: ['技术']
 ---
 原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。
 

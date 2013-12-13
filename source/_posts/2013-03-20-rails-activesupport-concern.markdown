@@ -3,7 +3,7 @@ layout: post
 title: "Rails ActiveSupport::Concern Object doesn't support#inspect"
 date: 2013-03-20 11:06
 comments: true
-categories: ["程序猿"] 
+categories: ["技术"]
 ---
 这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn't support#inspect问题.
 
@@ -34,7 +34,7 @@ categories: ["程序猿"]
 ```ruby
 module TreeBase
   extend ActiveSupport::Concern
-  
+
   included do
     attr_accessible :p_id, :_name, :order_idx, :level, :overall_idx
     belongs_to :parent, class_name: self.class.name, foreign_key: "p_id"
@@ -57,10 +57,10 @@ module TreeBase
 
     after_save :reset_index
   end
-  
+
   module ClassMethods
   end
- 
+
   module InstanceMethods
   end
 end

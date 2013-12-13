@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://pishilong.github.com
-title: 海岩咖啡的部落格 
-subtitle: 不以无过为贤，而以改过为美 
+title: 海岩咖啡的部落格
+subtitle: 闻过则喜，见贤思齐
 author: 海岩咖啡
 simple_search: http://google.com/search
 description:
@@ -33,6 +33,7 @@ destination: public
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
+tag_dir: blog/tags
 markdown: kramdown
 pygments: false # default python pygments have been replaced by pygments.rb
 category_title_prefix: "分类: "
