@@ -9,7 +9,8 @@
   <meta name="author" content="海岩咖啡">
 
   
-  <meta name="description" content="这篇文章写于2011-11-06 00:44:32，今次偶然看到，仍旧感慨颇深，和李总磨合1一年有余，他始终强调“成功是一种习惯”，“习惯”能迸发出无穷的力量，而恰恰是简单的“习惯”二次，其砥砺的过程又是何其艰难。 1840年鸦片战争，打开了中国近代史的大门，打破了闭关锁国政策，门户开放， &hellip;">
+  <meta name="description" content="本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。 连锁 一个连锁就是最终结论被陈述而子结论未被陈述的一串三段论。就像正常的三段论有标准形式，连锁也有标准形式，并且只有在标准形式之下，连锁才易于被评价。 标准形式的连锁有以下特征： 1. 论证中的每一个陈述都是标准形式
+2. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -61,6 +62,79 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji">6.6 连锁与消除项补集</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-13T09:47:00+08:00" pubdate data-updated="true">2013年12月13日 09:47:00</time>
+        
+         | <a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。</p>
+
+<h2 id="section">连锁</h2>
+
+<p>一个连锁就是最终结论被陈述而子结论未被陈述的一串三段论。就像正常的三段论有标准形式，连锁也有标准形式，并且只有在标准形式之下，连锁才易于被评价。</p>
+
+<p>标准形式的连锁有以下特征：</p>
+
+<pre><code>1. 论证中的每一个陈述都是标准形式
+2. 结论中的谓项出现在第一个前提
+3. 每一个词项在不同的前提都出现两次
+4. 每一个前提都和直接的前一个前提有一个共同的词项
+</code></pre>
+
+<p>评价一个连锁的步骤如下：</p>
+
+<pre><code>1. 把连锁变为标准形式
+2. 识别子结论
+3. 检查每一个三段论的有效性，如果有一个三段论无效，那么根据“串不强于其最弱连接”的原则，这个连锁也是无效的。
+</code></pre>
+
+<p>评价连锁就是要分而治之，正因为其没有陈述子结论，所以第一步需要把子结论补充进来，连锁的标准形式是为此服务的；补充了子结论，每个子结论又与其前提构成一个完整的三段论，然后检验每个三段论的有效性。</p>
+
+<h2 id="section-1">消除项补集</h2>
+
+<p>消除项补集，首先需要注意“项补集”的概念：</p>
+
+<pre><code>“优秀的运动员”的项补集并不是“不优秀的运动员”，而是“除了优秀的运动员外的任何一切，例如：猫、狗也算”。
+</code></pre>
+
+<p>消除项补集的目的在于构造三段论的标准形式以及连锁的标准形式。</p>
+
+<p>其工具就是之前学得换质、换位、换质位的方法。“质”就是“肯定或者否定”，换质就是更换谓项的质；换位是调换主项和谓项；换质位法就是先换质然后换位。</p>
+
+<p>这边需要特别注意，进行变换之后，需要逻辑等值。在换位法中，只有E、I满足；换质位法中，只有A、O满足；因为根据现代逻辑，限制换位法以及限制换质位法都是不成立的；而换质法，都能使用。</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -497,15 +571,15 @@
   </header>
 
 
-  <div class="entry-content"><p>Ch 2. Organizations, constrains, and projects </p>
+  <div class="entry-content"><p>Ch 2. Organizations, constrains, and projects</p>
 
 <pre><code> Organizations: Functional -&gt; Weak Matrix -&gt; Balanced Matrix -&gt; Strong Matrix -&gt; Projected
 
- 
+
 
  Operational Work: Which has no beginning and has no end.
 
-    
+
 
  Stackholders are impacted by your project.
 
@@ -513,11 +587,11 @@
 
  It's possible to "turn around" a negative stackholder.
 
-   
+
 
  Project constrains: Time , Cost, Scope, Resources, Quality, Risk
 
- All six of the constrains are related to each other. 
+ All six of the constrains are related to each other.
 
  There is almost never an easy, obvious trade-off where you can sacrifice one to improve the others.
 
@@ -528,44 +602,6 @@
  A program is a group of projects that should be managed together because of interdependencies.
 </code></pre>
 
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze">软件工程_实践者的研究方法-ch4指导实践的原则</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-11T17:36:00+08:00" pubdate data-updated="true">2012年10月11日 17:36:00</time>
-        
-         | <a href="/blog/ruan-jian-gong-cheng-shi-jian-zhe-de-yan-jiu-fang-fa-ch4zhi-dao-shi-jian-de-yuan-ze#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Test</p>
 </div>
   
   
@@ -908,11 +944,15 @@ config.ignoreEmptyParagraph = false;</code></pre>
   
     <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/生活'>生活 (2)</a></li><li><a href='/blog/categories/程序猿'>程序猿 (4)</a></li><li><a href='/blog/categories/读书笔记'>读书笔记 (5)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/产品'>产品 (1)</a></li><li><a href='/blog/categories/历史'>历史 (2)</a></li><li><a href='/blog/categories/思维'>思维 (1)</a></li><li><a href='/blog/categories/技术'>技术 (4)</a></li><li><a href='/blog/categories/生活'>生活 (3)</a></li><li><a href='/blog/categories/管理'>管理 (1)</a></li><li><a href='/blog/categories/读书'>读书 (4)</a></li></ul>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji">6.6 连锁与消除项补集</a>
+      </li>
     
       <li class="post">
         <a href="/blog/long-ma-chuan-jian-tohei-chuan">龍馬伝 剑と黑船</a>
@@ -928,10 +968,6 @@ config.ignoreEmptyParagraph = false;</code></pre>
     
       <li class="post">
         <a href="/blog/rails-activesupport-concern">Rails ActiveSupport::Concern Object doesn&#8217;t support#inspect</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/pmp-headfirst-ch2">PMP HeadFirst CH2</a>
       </li>
     
   </ul>
