@@ -1,99 +1,112 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>海岩咖啡的部落格</title>
-  <meta name="author" content="海岩咖啡">
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>不以无过为贤，而以改过为美  | 海岩咖啡的部落格</title>
 
-  
-  <meta name="description" content="本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。 连锁 一个连锁就是最终结论被陈述而子结论未被陈述的一串三段论。就像正常的三段论有标准形式，连锁也有标准形式，并且只有在标准形式之下，连锁才易于被评价。 标准形式的连锁有以下特征： 1. 论证中的每一个陈述都是标准形式
-2. &hellip;">
-  
+<meta name="author" content="海岩咖啡"> 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。 连锁 一个连锁就是最终结论被陈述而子结论未被陈述的一串三段论。就像正常的三段论有标准形式，连锁也有标准形式，并且只有在标准形式之下，连锁才易于被评价。 标准形式的连锁有以下特征： 1. 论证中的每一个陈述都是标准形式
+2. &hellip;"> <meta name="keywords" content="">
 
-  
-  <link rel="canonical" href="http://pishilong.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="海岩咖啡的部落格" type="application/atom+xml">
-  
-  
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+	<link href="/atom.xml" rel="alternate" title="海岩咖啡的部落格" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">海岩咖啡的部落格</a></h1>
-  
-    <h2>不以无过为贤，而以改过为美</h2>
-  
-</hgroup>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">海岩咖啡的部落格</a></h1>
+<h4>不以无过为贤，而以改过为美</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:pishilong.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:pishilong.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji">6.6 连锁与消除项补集</a></h1>
-    
-    
-      <p class="meta">
-        
+	<div id="content" class="inner">
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-13T09:47:00+08:00" pubdate data-updated="true">2013年12月13日 09:47:00</time>
-        
-         | <a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji">
+		
+			6.6 连锁与消除项补集</a>
+	</h2>
+	<div class="entry-content">
+		<p>本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。</p>
 
 <h2 id="section">连锁</h2>
 
@@ -129,44 +142,50 @@
 
 <p>这边需要特别注意，进行变换之后，需要逻辑等值。在换位法中，只有E、I满足；换质位法中，只有A、O满足；因为根据现代逻辑，限制换位法以及限制换质位法都是不成立的；而换质法，都能使用。</p>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-13T09:47:00+08:00" pubdate data-updated="true">2013年12月13日 09:47:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/思维/'>思维</a>, <a class='category' href='/blog/categories/读书/'>读书</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/long-ma-chuan-jian-tohei-chuan">龍馬伝 剑と黑船</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-28T11:40:00+08:00" pubdate data-updated="true">2013年06月28日 11:40:00</time>
-        
-         | <a href="/blog/long-ma-chuan-jian-tohei-chuan#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这篇文章写于2011-11-06 00:44:32，今次偶然看到，仍旧感慨颇深，和李总磨合1一年有余，他始终强调“成功是一种习惯”，“习惯”能迸发出无穷的力量，而恰恰是简单的“习惯”二次，其砥砺的过程又是何其艰难。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/long-ma-chuan-jian-tohei-chuan">
+		
+			龍馬伝 剑と黑船</a>
+	</h2>
+	<div class="entry-content">
+		<p>这篇文章写于2011-11-06 00:44:32，今次偶然看到，仍旧感慨颇深，和李总磨合1一年有余，他始终强调“成功是一种习惯”，“习惯”能迸发出无穷的力量，而恰恰是简单的“习惯”二次，其砥砺的过程又是何其艰难。</p>
 
 <hr />
 
@@ -193,84 +212,96 @@
 <p>任何学科，任何知识，实际上都是归一的，都是为己所用，润物细无声。不要把那些学的东西，仅仅看做是一门工具，他们都是填充自己内在的一个沙包。并不是学了数学，就一定要靠这个吃饭，更不是如果不能靠这个吃饭，就学了没用处。金字塔总是由千万块巨石所累计而成。</p>
 
 <p>我把学习日语看做一个修行，学日语不像有些人只为了点公司的奖金，也不光是为了工作上的便利和必要，而是因为学了一门语言就是多了一个掌握信息，了解信息的手段和渠道，能获到一手的信息，在现在这个社会是多么重要的事情，而且日本又是那么的强大，很多地方值得去借鉴值得去学习。最重要的一点，从99年初中开始，到现在，学了整整12年英语，英语也只是勉勉强强，没什么障碍，但谈不上掌握。现在信息比10年前发达多了，人也成长了太多，应该尝试下尽自己的可能在2-3年借着工作的契机，真正地掌握一门语言，突破自己，这才是受益终身的事情，在这个过程中，我相信能感悟很多。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-28T11:40:00+08:00" pubdate data-updated="true">2013年06月28日 11:40:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/生活/'>生活</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/ji-wei-su-cheng">积微速成</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/long-ma-chuan-jian-tohei-chuan/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-06T19:39:00+08:00" pubdate data-updated="true">2013年05月06日 19:39:00</time>
-        
-         | <a href="/blog/ji-wei-su-cheng#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>积微，月不胜日，时不胜月，岁不胜时。凡人好敖慢小事，大事至，然后兴之务之。如是，则常不胜夫敦比于小事者矣！何也？小事之至也数，其悬日也博，其为积也大。大事之至也​希，其悬日也浅，其为积也小。故善日者王，善时者霸，补漏者危，大荒者亡！故，王者敬日，霸者敬时，仅存之国危而后戚之。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/ji-wei-su-cheng">
+		
+			积微速成</a>
+	</h2>
+	<div class="entry-content">
+		<p>积微，月不胜日，时不胜月，岁不胜时。凡人好敖慢小事，大事至，然后兴之务之。如是，则常不胜夫敦比于小事者矣！何也？小事之至也数，其悬日也博，其为积也大。大事之至也​希，其悬日也浅，其为积也小。故善日者王，善时者霸，补漏者危，大荒者亡！故，王者敬日，霸者敬时，仅存之国危而后戚之。</p>
 
 <p>亡国至亡而后知亡，至死而后知死，亡国之祸败，不可胜悔也。霸者之善著也，可以时托也。王者之功名，不可胜日志也。财物货宝以大为重，政教功名者反是，能积微者速成。诗曰：“德如毛，民鲜能克举之。”此之谓也。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-06T19:39:00+08:00" pubdate data-updated="true">2013年05月06日 19:39:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/历史/'>历史</a>, <a class='category' href='/blog/categories/读书/'>读书</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/jquery-validation-plugin-and-select2">Jquery Validation Plugin and Select2</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/ji-wei-su-cheng/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-29T11:18:00+08:00" pubdate data-updated="true">2013年03月29日 11:18:00</time>
-        
-         | <a href="/blog/jquery-validation-plugin-and-select2#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://docs.jquery.com/Plugins/Validation">Jquery Validation Plugin</a>是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/jquery-validation-plugin-and-select2">
+		
+			Jquery Validation Plugin and Select2</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://docs.jquery.com/Plugins/Validation">Jquery Validation Plugin</a>是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。</p>
 
 <p>Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时，select2就无法验证了。</p>
 
@@ -295,44 +326,50 @@
 </span><span class="line">  <span class="c1">#select2把真正的select隐藏了，而jquery validator会忽略需要特殊处理</span>
 </span><span class="line">  <span class="n">ignore</span><span class="p">:</span> <span class="s1">&#39;input[type=hidden]&#39;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-29T11:18:00+08:00" pubdate data-updated="true">2013年03月29日 11:18:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/技术/'>技术</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/rails-activesupport-concern">Rails ActiveSupport::Concern Object Doesn&#8217;t Support#inspect</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/jquery-validation-plugin-and-select2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-20T11:06:00+08:00" pubdate data-updated="true">2013年03月20日 11:06:00</time>
-        
-         | <a href="/blog/rails-activesupport-concern#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题.</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/rails-activesupport-concern">
+		
+			Rails ActiveSupport::Concern Object Doesn&#8217;t Support#inspect</a>
+	</h2>
+	<div class="entry-content">
+		<p>这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题.</p>
 
 <h1 id="section">背景</h1>
 
@@ -534,44 +571,50 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>其中，<code>default_value_for</code>是设置对象默认值的，其上下文应该是实例对象而不是类，所以需要在代码块中传入<code>node</code>.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-20T11:06:00+08:00" pubdate data-updated="true">2013年03月20日 11:06:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/技术/'>技术</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/pmp-headfirst-ch2">PMP HeadFirst CH2</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/rails-activesupport-concern/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-09T11:24:00+08:00" pubdate data-updated="true">2012年11月09日 11:24:00</time>
-        
-         | <a href="/blog/pmp-headfirst-ch2#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ch 2. Organizations, constrains, and projects</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/pmp-headfirst-ch2">
+		
+			PMP HeadFirst CH2</a>
+	</h2>
+	<div class="entry-content">
+		<p>Ch 2. Organizations, constrains, and projects</p>
 
 <pre><code> Organizations: Functional -&gt; Weak Matrix -&gt; Balanced Matrix -&gt; Strong Matrix -&gt; Projected
 
@@ -602,44 +645,50 @@
  A program is a group of projects that should be managed together because of interdependencies.
 </code></pre>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-09T11:24:00+08:00" pubdate data-updated="true">2012年11月09日 11:24:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/管理/'>管理</a>, <a class='category' href='/blog/categories/读书/'>读书</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai">Ckeditor上传文件失败</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/pmp-headfirst-ch2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true">2012年08月08日 11:17:00</time>
-        
-         | <a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Rails: 3.2.6</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai">
+		
+			Ckeditor上传文件失败</a>
+	</h2>
+	<div class="entry-content">
+		<p>Rails: 3.2.6</p>
 
 <p>使用的是Ckeditor的Rails Gem.</p>
 
@@ -655,44 +704,50 @@
 
 <p>但是最终没有把god注销，而是在代码中直接使用了2<em>2048</em>2048</p>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true">2012年08月08日 11:17:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/技术/'>技术</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">微信背后的产品观</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-01T09:46:00+08:00" pubdate data-updated="true">2012年08月01日 09:46:00</time>
-        
-         | <a href="/blog/wei-xin-bei-hou-de-chan-pin-guan#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>http://www.geekpark.net/read/view/161904</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">
+		
+			微信背后的产品观</a>
+	</h2>
+	<div class="entry-content">
+		<p>http://www.geekpark.net/read/view/161904</p>
 
 <p>http://it.sohu.com/20120725/n349005014.shtml</p>
 
@@ -775,44 +830,50 @@
 　　13、一个产品的基本功能不受用户认可，做加法也无济于事。
 　　14、想不清楚一个功能点之前，宁可不做。
 　　15、千万不要让用户在产品里“管理”什么。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-01T09:46:00+08:00" pubdate data-updated="true">2012年08月01日 09:46:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/产品/'>产品</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/ckeditorde-ni-xi">Ckeditor的逆袭</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/wei-xin-bei-hou-de-chan-pin-guan/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-28T11:39:00+08:00" pubdate data-updated="true">2012年06月28日 11:39:00</time>
-        
-         | <a href="/blog/ckeditorde-ni-xi#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/ckeditorde-ni-xi">
+		
+			Ckeditor的逆袭</a>
+	</h2>
+	<div class="entry-content">
+		<p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
 
 <p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
 
@@ -856,44 +917,50 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
 <p>下一篇着重讲下数学公式编辑器的集成，从官方的php移植到了rails上。</p>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-28T11:39:00+08:00" pubdate data-updated="true">2012年06月28日 11:39:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/技术/'>技术</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/yi-shi-wei-jing">以史为镜</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/ckeditorde-ni-xi/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-28T00:39:00+08:00" pubdate data-updated="true">2012年06月28日 00:39:00</time>
-        
-         | <a href="/blog/yi-shi-wei-jing#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我记得”以史为镜”，因为一篇文章。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/yi-shi-wei-jing">
+		
+			以史为镜</a>
+	</h2>
+	<div class="entry-content">
+		<p>我记得”以史为镜”，因为一篇文章。</p>
 
 <p>那是12年前，读初二的时候，当时有幸进入鲁迅文学院的少年作家班学习，在某一期的内部通讯上，看到一篇古怪题目的文章，叫《猫照镜》，详细的内容已经记不清了，但是记得他的写作手法有卡夫卡变形记的影子，用一个猫照镜这样的荒诞的而无意义的情景影射到了魏征身上，魏征劝谏唐太宗:以铜为镜可以正衣冠，以人为镜可以明得失，以史为镜可以知兴替。</p>
 
@@ -925,66 +992,62 @@ config.ignoreEmptyParagraph = false;</code></pre>
 
 <p>编年体到纪传体。都体会一下。</p>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-28T00:39:00+08:00" pubdate data-updated="true">2012年06月28日 00:39:00</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/历史/'>历史</a>, <a class='category' href='/blog/categories/读书/'>读书</a>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/产品'>产品 (1)</a></li><li><a href='/blog/categories/历史'>历史 (2)</a></li><li><a href='/blog/categories/思维'>思维 (1)</a></li><li><a href='/blog/categories/技术'>技术 (4)</a></li><li><a href='/blog/categories/生活'>生活 (3)</a></li><li><a href='/blog/categories/管理'>管理 (1)</a></li><li><a href='/blog/categories/读书'>读书 (4)</a></li></ul>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/lian-suo-yu-xiao-chu-xiang-bu-ji">6.6 连锁与消除项补集</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/long-ma-chuan-jian-tohei-chuan">龍馬伝 剑と黑船</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/ji-wei-su-cheng">积微速成</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/jquery-validation-plugin-and-select2">jquery validation plugin and select2</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/rails-activesupport-concern">Rails ActiveSupport::Concern Object doesn&#8217;t support#inspect</a>
-      </li>
-    
-  </ul>
-</section>
+	
+		<span class="comments"><a href="/blog/yi-shi-wei-jing/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
-  
-</aside>
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - 海岩咖啡 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    海岩咖啡
 
+<br>
+Powered by Octopress.
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'pishilong';
@@ -994,16 +1057,10 @@ config.ignoreEmptyParagraph = false;</code></pre>
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-
-
-
 
 
 

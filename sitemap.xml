@@ -2,58 +2,70 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://pishilong.github.com/blog/qi-xing</loc>
-        <lastmod>2013-12-13T09:55:07+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/sha-men</loc>
-        <lastmod>2013-12-13T09:55:18+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/yi-shi-wei-jing</loc>
-        <lastmod>2013-12-13T09:55:35+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/ckeditorde-ni-xi</loc>
-        <lastmod>2013-12-13T09:55:23+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/wei-xin-bei-hou-de-chan-pin-guan</loc>
-        <lastmod>2013-12-13T09:55:41+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</loc>
-        <lastmod>2013-12-13T09:55:45+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/pmp-headfirst-ch2</loc>
-        <lastmod>2013-12-13T09:55:52+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/rails-activesupport-concern</loc>
-        <lastmod>2013-12-13T09:54:26+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/jquery-validation-plugin-and-select2</loc>
-        <lastmod>2013-12-13T09:52:18+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/ji-wei-su-cheng</loc>
-        <lastmod>2013-12-13T09:56:02+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/long-ma-chuan-jian-tohei-chuan</loc>
-        <lastmod>2013-12-13T09:50:15+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji</loc>
-        <lastmod>2013-12-13T10:13:25+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pishilong.github.com/archives/</loc>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/blog/archives/</loc>
-        <lastmod>2013-12-13T10:13:25+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pishilong.github.com/blog/</loc>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://pishilong.github.com/</loc>
-        <lastmod>2013-12-13T10:13:25+08:00</lastmod>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pishilong.github.com/robots.txt</loc>
+        <lastmod>2013-12-13T10:26:09+08:00</lastmod>
     </url>
 </urlset>
