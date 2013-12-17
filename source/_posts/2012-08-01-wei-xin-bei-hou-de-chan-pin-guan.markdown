@@ -4,6 +4,7 @@ title: "微信背后的产品观"
 date: 2012-08-01 09:46
 comments: true
 categories: ['产品']
+keywords: 微信背后的产品观, 张小龙
 ---
 http://www.geekpark.net/read/view/161904
 

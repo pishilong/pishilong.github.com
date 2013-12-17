@@ -4,6 +4,7 @@ title: "Rails ActiveSupport::Concern Object doesn't support#inspect"
 date: 2013-03-20 11:06
 comments: true
 categories: ["技术"]
+keywords: rails, Concerns, Object doesn't support#inspect ActiveSupport::Concern
 ---
 这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn't support#inspect问题.
 

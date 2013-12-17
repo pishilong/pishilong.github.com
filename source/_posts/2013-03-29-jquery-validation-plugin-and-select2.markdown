@@ -4,6 +4,7 @@ title: "jquery validation plugin and select2"
 date: 2013-03-29 11:18
 comments: true
 categories: ["技术"]
+keywords: jQuery Validation Plugin, Select2
 ---
 
   [Jquery Validation Plugin](http://docs.jquery.com/Plugins/Validation)是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。

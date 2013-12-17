@@ -4,6 +4,7 @@ title: "ckeditor上传文件失败"
 date: 2012-08-08 11:17
 comments: true
 categories: ['技术']
+keywords: rails, ckeditor, ckeditor上传文件失败, god
 ---
 Rails: 3.2.6
 
