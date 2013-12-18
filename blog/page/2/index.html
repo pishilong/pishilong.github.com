@@ -7,7 +7,7 @@
 
 <meta name="author" content="海岩咖啡">
 
-<meta name="description" content="我记得”以史为镜”，因为一篇文章。 那是12年前，读初二的时候，当时有幸进入鲁迅文学院的少年作家班学习，在某一期的内部通讯上，看到一篇古怪题目的文章，叫《猫照镜》，详细的内容已经记不清了，但是记得他的写作手法有卡夫卡变形记的影子，用一个猫照镜这样的荒诞的而无意义的情景影射到了魏征身上， &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。 而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。 于是改用比较成熟的ckeditor，整合rails相当方便， &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -96,6 +96,97 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/ckeditorde-ni-xi">
+		
+			Ckeditor的逆袭</a>
+	</h2>
+	<div class="entry-content">
+		<p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
+
+<p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
+
+<p>于是改用比较成熟的<a href="https://github.com/galetahub/ckeditor">ckeditor</a>，整合rails相当方便，上传等也一应俱全,还提供ActiveRecord, Mongid等持久化支持，和<a href="https://github.com/thoughtbot/paperclip">paperclip</a>,<a href="https://github.com/jnicklas/carrierwave">carrierwave</a>上传插件的支持。</p>
+
+<pre><code>gem "ckeditor", "3.7.1"
+rails generate ckeditor:install --orm=active_record --backend=paperclip
+</code></pre>
+
+<p>一直使用很顺畅，直到碰到两个很恶心的问题:</p>
+
+<ul>
+  <li>
+    <p>ckeditor总会把内容自己套一层&lt;p&gt;标签</p>
+
+    <p>这是因为ckeditor对于换行有三种模式，默认是&lt;p&gt;,改成br模式或者div模式即可解决问题，在config.js中加入:</p>
+  </li>
+</ul>
+<div>
+  <pre><code class="ruby">config.enterMode = CKEDITOR.ENTER_BR;
+config.shiftEnterMode = CKEDITOR.ENTER_BR;</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>HTML里面本来&lt;table&gt;标签在<span>标签里面，在kindeditor里面，能正常显示在富文本编辑器里，但是ckeditor会自己把外面的<span>标签移除，然后内嵌到table里的文字周围。</span></span></p>
+
+    <p>原本以为是ckeditor自己怪异的行为，然后几乎花了一天时间去看ckeditor的源码以及详细设置，使用了很多方案:</p>
+  </li>
+</ul>
+<div>
+  <pre><code class="ruby">config.removePlugins = 'scayt';
+config.autoParagraph = false;
+config.ignoreEmptyParagraph = false;</code></pre>
+</div>
+
+<p>都不行，后来在一个帖子里看到，span标签属于inline element,而table属于block element,从规范和合理的角度出发,block是不能内嵌到inline element的。
+  所以ckeditor进行了检查并处理。确实在ckeditor的dtd中也对各类标签进行了定义</p>
+
+<p>ckeditor总的来说还是很不错，但是体积比Kindeditor稍大，如果不是特别的需求，我会选择kindeditor.</p>
+
+<p>下一篇着重讲下数学公式编辑器的集成，从官方的php移植到了rails上。</p>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-28T11:39:00+08:00" pubdate data-updated="true">2012年06月28日 11:39:00</time></div>
+	
+
+<div class="categories">
+
+	<a class='category' href='/blog/categories/技术/'>技术</a>
+
+</div>
+
+
+  
+
+
+	
+		<span class="comments"><a href="/blog/ckeditorde-ni-xi/blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
 
 
     <article class="post">

@@ -4,7 +4,7 @@
   <title><![CDATA[海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2013-12-18T00:03:47+08:00</updated>
+  <updated>2013-12-18T22:40:13+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[7.1 日常论证的符号化]]></title>
+    <link href="http://pishilong.github.com/blog/pol-7-dot-1"/>
+    <updated>2013-12-18T21:59:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/pol-7-dot-1</id>
+    <content type="html"><![CDATA[<p>逻辑发展不是连续的，亚里士多德(公元前384-322)的三段论逻辑以及斯多葛学派克里希普斯(公元前279-206)的命题逻辑之后,逻辑领域几乎没有什么有意义的进步。</p>
+
+<p>中世纪时期，存在逻辑学的复兴，但中世纪末期再一次被忽视，直至莱布尼兹(1646-1716)出现，都几乎没有创造性的工作。</p>
+
+<p>自19世纪以来，逻辑领域取得了快速发展。文恩(1834-1923)的文恩图，图解也许是评价直言三段论最直观的手段，本章开始,集中考察由美国哲学家查尔斯-桑德斯-皮尔士(1839-1914)所发展的真值表法。</p>
+
+<p>本节阐述的是如何把日常语言的论证翻译为符号。</p>
+
+<ul>
+  <li>原子陈述与复合陈述</li>
+  <li>符号库及其5种逻辑算子</li>
+  <li>合式公式的6个条件</li>
+</ul>
+
+<h2 id="section">原子陈述与复合陈述</h2>
+
+<p><code>原子陈述</code>是不包含任何其他陈述作为组成部分的陈述</p>
+
+<p><code>复合陈述</code>是至少包含一个原子陈述作为组成部分的陈述</p>
+
+<pre><code>并非本-琼森写了《哈姆雷特》
+</code></pre>
+
+<p>这个陈述也是复合陈述，虽然只有一个支陈述，但是它还包括联接词”并非”。</p>
+
+<h2 id="section-1">符号库及其5种逻辑算子</h2>
+
+<p><code>符号库</code>由<code>圆括号</code>,<code>逻辑算子</code>和<code>陈述字母</code>组成。其中<code>逻辑算子</code>包括5种: <code>否定</code>，<code>合取</code>，<code>析取</code>，<code>条件句</code>和<code>双条件</code>。</p>
+
+<p>其中的关键有两点:</p>
+
+<ol>
+  <li>析取是指作为”或者”的相容含义，即可能同时为真</li>
+  <li>圆括号很重要，常常用来避免模糊性，有时陈述太长以至于无法判断主逻辑算子是什么，此时需要合理的运用圆括号；
+值得一提的是，合式公式的6个规则中，后4个都给出的是带圆括号的，这样虽然冗繁，但肯定不会有歧义。</li>
+</ol>
+
+<h2 id="section-2">合式公式的6个条件</h2>
+
+<p>6个条件要求十分严格</p>
+
+<ul>
+  <li>条件2没有括号，则不能有括号</li>
+  <li>合取，析取，条件句，双条件都要用圆括号</li>
+  <li>陈述字母只能是大写</li>
+</ul>
+
+<h2 id="section-3">练习</h2>
+
+<ol>
+  <li>练习1.2 答案说不是合式公式，但是我的判断是合式公式</li>
+  <li>练习2.3 答案说是合式公式，但是我的判断是否定的，因为主算子不明确，可能是第一个~，也可能是箭头</li>
+  <li>对于<code>A仅当B</code>要特别注意，每次都搞错，应该是<code>A-&gt;B</code>而非<code>B-&gt;A</code></li>
+</ol>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[6.7 评价三段论的规则]]></title>
