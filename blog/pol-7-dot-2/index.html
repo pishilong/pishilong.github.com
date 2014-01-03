@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>分类: 产品  | 海岩咖啡的部落格</title>
+	<title>7.2 真值表  | 海岩咖啡的部落格</title>
 
 <meta name="author" content="海岩咖啡">
 
-<meta name="description" content="Category: 产品"> <meta name="keywords" content="">
+<meta name="description" content="真值表可以判定论证的有效性，本节考察了5个类型基本复合句的真值表。 波形号（否定） 点号 （合取） V形号 （析取） 箭头 （实质条件句） 双箭头 （实质双条件句） 本节内容比较简单，值得注意的有3点 合取和析取不要搞混了, 合取是与, 析取是或 实质条件句的意义 实质条件句的真值表中， &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -95,18 +95,47 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner">
-	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">7.2 真值表</h2>
+	<div class="entry-content"><p><code>真值表</code>可以判定论证的有效性，本节考察了5个类型基本复合句的真值表。</p>
+
+<ul>
+  <li>波形号（否定）</li>
+  <li>点号 （合取）</li>
+  <li>V形号 （析取）</li>
+  <li>箭头 （实质条件句）</li>
+  <li>双箭头 （实质双条件句）</li>
+</ul>
+
+<p>本节内容比较简单，值得注意的有3点</p>
+
+<ol>
+  <li><code>合取</code>和<code>析取</code>不要搞混了, <code>合取</code>是<code>与</code>, <code>析取</code>是<code>或</code></li>
+  <li>
+    <p>实质条件句的意义</p>
+
+    <p>实质条件句的真值表中，只有前提为真，结论为假时，整个实质条件句才为假，这与自然语言中的现实情况大相径庭，尤其在前提与结论毫不相干时。其好处在于</p>
+
+    <ul>
+      <li>让我们更好地确信了第一章介绍的直觉性推理规则的有效性–肯定前件式，否定后件式，假言三段论，析取三段论和构造性二难</li>
+      <li>确证了否定前件和否定后件的形式谬误的无效性</li>
+    </ul>
+
+    <p>简而言之，实质条件句的捕获了自然语言条件句的部分意义，这些条件句对命题逻辑的基本论证形式的有效性是本质上的。</p>
+  </li>
+  <li>实质双条件句实质上是两个实质条件句的合取</li>
+</ol>
+
+<h2 id="section">练习</h2>
+<ol>
+  <li>练习2.2，答案错了，当且仅当是充要条件，明显希拉里是妹子啊~！</li>
+</ol>
+
+</div>
 
 
-	
-	
-	<section class="archives"><h1 class="year">2012</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/wei-xin-bei-hou-de-chan-pin-guan">微信背后的产品观</a></h2>
-	<div class="meta">
-    <div class="date">
+<div class="meta">
+	<div class="date">
 
 
 
@@ -118,26 +147,48 @@ $(document).ready(
   
 
 
-<time datetime="2012-08-01T09:46:00+08:00" pubdate data-updated="true">2012年08月01日 09:46:00</time></div>
-    
+<time datetime="2014-01-03T19:13:00+08:00" pubdate data-updated="true">2014年01月03日 19:13:00</time></div>
+	
 
 <div class="categories">
 
-	<a class='category' href='/blog/categories/产品/'>产品</a>
+	<a class='category' href='/blog/categories/思维/'>思维</a>, <a class='category' href='/blog/categories/读书/'>读书</a>
 
 </div>
 
 
-    
+  
+
+<span class="tags">
+  
+    <a class='tag' href='/blog/tags/luo-ji-de-li-liang/'>逻辑的力量</a>
+  
+</span>
 
 
-	    
-	    <span class="comments"><a href="/blog/wei-xin-bei-hou-de-chan-pin-guan#disqus_thread">Comments</a></span>
-	    
-	</div>
+	
+		<span class="comments"><a href="/blog/pol-7-dot-2#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
@@ -159,7 +210,10 @@ Powered by Octopress.
       var disqus_shortname = 'pishilong';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pishilong.github.com/blog/pol-7-dot-2';
+        var disqus_url = 'http://pishilong.github.com/blog/pol-7-dot-2';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

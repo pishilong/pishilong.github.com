@@ -4,7 +4,7 @@
   <title><![CDATA[分类: 读书 | 海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/blog/categories/读书/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2013-12-18T22:40:13+08:00</updated>
+  <updated>2014-01-03T19:35:21+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[7.2 真值表]]></title>
+    <link href="http://pishilong.github.com/blog/pol-7-dot-2"/>
+    <updated>2014-01-03T19:13:00+08:00</updated>
+    <id>http://pishilong.github.com/blog/pol-7-dot-2</id>
+    <content type="html"><![CDATA[<p><code>真值表</code>可以判定论证的有效性，本节考察了5个类型基本复合句的真值表。</p>
+
+<ul>
+  <li>波形号（否定）</li>
+  <li>点号 （合取）</li>
+  <li>V形号 （析取）</li>
+  <li>箭头 （实质条件句）</li>
+  <li>双箭头 （实质双条件句）</li>
+</ul>
+
+<p>本节内容比较简单，值得注意的有3点</p>
+
+<ol>
+  <li><code>合取</code>和<code>析取</code>不要搞混了, <code>合取</code>是<code>与</code>, <code>析取</code>是<code>或</code></li>
+  <li>
+    <p>实质条件句的意义</p>
+
+    <p>实质条件句的真值表中，只有前提为真，结论为假时，整个实质条件句才为假，这与自然语言中的现实情况大相径庭，尤其在前提与结论毫不相干时。其好处在于</p>
+
+    <ul>
+      <li>让我们更好地确信了第一章介绍的直觉性推理规则的有效性–肯定前件式，否定后件式，假言三段论，析取三段论和构造性二难</li>
+      <li>确证了否定前件和否定后件的形式谬误的无效性</li>
+    </ul>
+
+    <p>简而言之，实质条件句的捕获了自然语言条件句的部分意义，这些条件句对命题逻辑的基本论证形式的有效性是本质上的。</p>
+  </li>
+  <li>实质双条件句实质上是两个实质条件句的合取</li>
+</ol>
+
+<h2 id="section">练习</h2>
+<ol>
+  <li>练习2.2，答案错了，当且仅当是充要条件，明显希拉里是妹子啊~！</li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[7.1 日常论证的符号化]]></title>
@@ -251,45 +293,6 @@
     <content type="html"><![CDATA[<p>积微，月不胜日，时不胜月，岁不胜时。凡人好敖慢小事，大事至，然后兴之务之。如是，则常不胜夫敦比于小事者矣！何也？小事之至也数，其悬日也博，其为积也大。大事之至也​希，其悬日也浅，其为积也小。故善日者王，善时者霸，补漏者危，大荒者亡！故，王者敬日，霸者敬时，仅存之国危而后戚之。</p>
 
 <p>亡国至亡而后知亡，至死而后知死，亡国之祸败，不可胜悔也。霸者之善著也，可以时托也。王者之功名，不可胜日志也。财物货宝以大为重，政教功名者反是，能积微者速成。诗曰：“德如毛，民鲜能克举之。”此之谓也。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[PMP HeadFirst CH2]]></title>
-    <link href="http://pishilong.github.com/blog/pmp-headfirst-ch2"/>
-    <updated>2012-11-09T11:24:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/pmp-headfirst-ch2</id>
-    <content type="html"><![CDATA[<p>Ch 2. Organizations, constrains, and projects</p>
-
-<pre><code> Organizations: Functional -&gt; Weak Matrix -&gt; Balanced Matrix -&gt; Strong Matrix -&gt; Projected
-
-
-
- Operational Work: Which has no beginning and has no end.
-
-
-
- Stackholders are impacted by your project.
-
- A stackholder is anyone who is affected either positively or negatively by the cost, time, scope, resources, quality, or risk of your project.
-
- It's possible to "turn around" a negative stackholder.
-
-
-
- Project constrains: Time , Cost, Scope, Resources, Quality, Risk
-
- All six of the constrains are related to each other.
-
- There is almost never an easy, obvious trade-off where you can sacrifice one to improve the others.
-
-
-
- A portfolio charter will give the business goal that a group of projects and programs will accomplish as part of a portfolio.
-
- A program is a group of projects that should be managed together because of interdependencies.
-</code></pre>
-
 ]]></content>
   </entry>
   
