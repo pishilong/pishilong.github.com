@@ -4,7 +4,7 @@
   <title><![CDATA[分类: 技术 | 海岩咖啡的部落格]]></title>
   <link href="http://pishilong.github.com/blog/categories/技术/atom.xml" rel="self"/>
   <link href="http://pishilong.github.com/"/>
-  <updated>2014-01-03T19:35:21+08:00</updated>
+  <updated>2014-01-19T15:34:27+08:00</updated>
   <id>http://pishilong.github.com/</id>
   <author>
     <name><![CDATA[海岩咖啡]]></name>
@@ -216,20 +216,22 @@ rails generate ckeditor:install --orm=active_record --backend=paperclip
     <p>ckeditor总会把内容自己套一层&lt;p&gt;标签</p>
 
     <p>这是因为ckeditor对于换行有三种模式，默认是&lt;p&gt;,改成br模式或者div模式即可解决问题，在config.js中加入:
-{% highlight ruby %}
-config.enterMode = CKEDITOR.ENTER_BR;
-config.shiftEnterMode = CKEDITOR.ENTER_BR;
-{% endhighlight %}</p>
+<div>
+  <pre><code class='ruby'>config.enterMode = CKEDITOR.ENTER_BR;
+config.shiftEnterMode = CKEDITOR.ENTER_BR;</code></pre>
+</div>
+</p>
   </li>
   <li>
     <p>HTML里面本来&lt;table&gt;标签在<span>标签里面，在kindeditor里面，能正常显示在富文本编辑器里，但是ckeditor会自己把外面的<span>标签移除，然后内嵌到table里的文字周围。</span></span></p>
 
     <p>原本以为是ckeditor自己怪异的行为，然后几乎花了一天时间去看ckeditor的源码以及详细设置，使用了很多方案:
-{% highlight ruby %}
-config.removePlugins = ‘scayt’;
+<div>
+  <pre><code class='ruby'>config.removePlugins = ‘scayt’;
 config.autoParagraph = false;
-config.ignoreEmptyParagraph = false;
-{% endhighlight %}</p>
+config.ignoreEmptyParagraph = false;</code></pre>
+</div>
+</p>
 
     <p>都不行，后来在一个帖子里看到，span标签属于inline element,而table属于block element,从规范和合理的角度出发,block是不能内嵌到inline element的。
 所以ckeditor进行了检查并处理。确实在ckeditor的dtd中也对各类标签进行了定义</p>
