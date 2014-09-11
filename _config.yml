@@ -2,9 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://pishilong.github.com
+url: pishilong.com
 title: 海岩咖啡的部落格
 subtitle: 闻过则喜，见贤思齐
+keywords: 皮诗龙 pishilong
 author: 海岩咖啡
 simple_search: http://google.com/search
 description:
@@ -92,7 +93,12 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: pishilong
-disqus_show_comment_count: true
+disqus_comments: false
+disqus_show_comment_count: false
+
+# duoshuo comments
+duoshuo_comments: true
+duoshuo_short_name: pishilong
 
 # Google Analytics
 google_analytics_tracking_id:
