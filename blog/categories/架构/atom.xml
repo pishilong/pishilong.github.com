@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类: 架构 | 海岩咖啡的部落格]]></title>
+  <link href="pishilong.com/blog/categories/架构/atom.xml" rel="self"/>
+  <link href="pishilong.com/"/>
+  <updated>2021-03-01T18:31:51+08:00</updated>
+  <id>pishilong.com/</id>
+  <author>
+    <name><![CDATA[海岩咖啡,皮诗龙]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[领域建模的定义]]></title>
+    <link href="pishilong.com/blog/definition-of-domain"/>
+    <updated>2016-03-01T13:31:00+08:00</updated>
+    <id>pishilong.com/blog/definition-of-domain</id>
+    <content type="html"><![CDATA[<p><code>领域建模</code>是一个动词，扩展开的话就是<code>针对领域知识进行建模工作</code>，那么其输入就是<code>领域知识</code>，输出是<code>模型</code>，过程是<code>构建</code>。</p>
+
+<p>对于<code>领域知识</code></p>
+
+<p>来源于领域专家，在云程系统中，就是教研团队，他们对试题的理解，对知识的理解，以及对整个产品的构想，如何使用试题、知识。</p>
+
+<p>对于<code>模型</code>：</p>
+
+<p><code>模型</code>是一种简化，它对现实进行阐述，只是抽象出与解决手头问题有关的方面而忽略掉无关的细节问题。</p>
+
+<p>综上，<code>领域建模</code>是基于<code>特定目标</code>对<code>领域知识</code>进行的<code>严格组织</code>与<code>选择性抽象</code>，简化知识，以便了解信息的含义并聚焦于问题本身。</p>
+]]></content>
+  </entry>
+  
+</feed>

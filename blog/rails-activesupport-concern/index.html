@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title>Rails ActiveSupport::Concern Object doesn't support#inspect  | 海岩咖啡的部落格</title>
 
-<meta name="author" content="海岩咖啡">
+<meta name="author" content="海岩咖啡,皮诗龙">
 
 <meta name="description" content="这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题. 背景 树形数据结构在系统中越来越多，而他的很多特性是可以复用的，如果对每一个model都定义相同的方法， &hellip;"> <meta name="keywords" content="rails, Concerns, Object doesn't support#inspect ActiveSupport::Concern">
 
@@ -15,8 +15,8 @@
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <!--[if lt IE 9]><script src="/javascripts/libs/html5.min.js"></script><![endif]-->
+  <script src="/javascripts/libs/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
 <script language="Javascript" type="text/javascript">
@@ -62,31 +62,31 @@ $(document).ready(
 	<header id="header" class="inner"><h1><a href="/">海岩咖啡的部落格</a></h1>
 <h4>闻过则喜，见贤思齐</h4>
 <nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/archives">Archive</a></li>
-  <li><a href="/blog/categories">Category</a></li>
-  <li><a href="/blog/tags">Tag</a></li>
-  <li><a href="/about">About</a></li>
+	<li><a href="/">文章</a></li>
+	<li><a href="/archives">列表</a></li>
+  <li><a href="/blog/categories">分类</a></li>
+  <li><a href="/blog/tags">标签</a></li>
+  <li><a href="/about">关于我</a></li>
 </ul>
-</nav>
+</nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/archives">Archive</a></li>
-  <li><a href="/blog/categories">Category</a></li>
-  <li><a href="/blog/tags">Tag</a></li>
-  <li><a href="/about">About</a></li>
+	<li><a href="/">文章</a></li>
+	<li><a href="/archives">列表</a></li>
+  <li><a href="/blog/categories">分类</a></li>
+  <li><a href="/blog/tags">标签</a></li>
+  <li><a href="/about">关于我</a></li>
 </ul>
-</div>
+</div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
 		<div class="container">
 			<form action="http://google.com/search" method="get">
 				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:pishilong.github.com">
+				<input type="hidden" name="q" value="site:pishilong.com">
 			</form>
 		</div>
 	</div>
@@ -105,7 +105,7 @@ $(document).ready(
 
 <p>第一个方案打算使用继承,使用通用类继承ActiveRecord::Base 然后其他的树形类再继承这个通用类</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -113,11 +113,11 @@ $(document).ready(
 </span><span class="line">  <span class="k">end</span>
 </span><span class="line">  <span class="no">GrammarTree</span> <span class="o">&lt;</span> <span class="no">TreeBase</span>
 </span><span class="line">  <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span></code></pre></td></tr></table></div></figure>
 
 <p>但是这样会报错，提示在数据库中找不到tree_bases这张表，这是肯定的，于是根据网上的方法，把TreeBase设置成没有表与其对应的虚类，但是Rails还是不吃这一套.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -125,11 +125,11 @@ $(document).ready(
 </span><span class="line">    <span class="nb">self</span><span class="o">.</span><span class="n">absract_class</span> <span class="o">=</span> <span class="kp">true</span>
 </span><span class="line">    <span class="vi">@columns</span> <span class="o">=</span> <span class="o">[]</span>
 </span><span class="line">  <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span></code></pre></td></tr></table></div></figure>
 
 <p>于是打算采用module的方案，<a href="http://ruby-china.org/topics/7709">Rails4重大设计决策：“胖”Model用ActiveSupport::Concern瘦身</a>, 那就先采用这个做法试验一下.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -193,7 +193,7 @@ $(document).ready(
 </span><span class="line">  <span class="k">module</span> <span class="nn">InstanceMethods</span>
 </span><span class="line">  <span class="k">end</span>
 </span><span class="line"><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span></code></pre></td></tr></table></div></figure>
 
 <p>以上代码的思路很容看清楚，树形结构肯定有<code>parent</code>,也有<code>children</code>,而<code>TreeBase</code>只是提供一个处理框架，具体的表还是得看<code>include</code>了这个<code>module</code>的类，所以在<code>class_name</code>中用的是<code>self.class.name</code>.
 同理，在查找节点时，也用的<code>self.class.where(p_id: nil)</code></p>
@@ -204,7 +204,7 @@ $(document).ready(
 
 <p>最终的原因在于<code>module</code>中<code>included</code>,<code>InstanceMethods</code>,<code>ClassMethods</code>的上下文不一样，<code>InstanceMethods</code>定义的是实例方法，所以默认的上下文就是实例，于是可以这样定义：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -240,7 +240,7 @@ $(document).ready(
 </span><span class="line">    <span class="k">end</span>
 </span><span class="line">  <span class="k">end</span>
 </span><span class="line"><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span></code></pre></td></tr></table></div></figure>
 
 <p><code>children</code>这样的属性或者实例方法能直接调用.</p>
 
@@ -252,7 +252,7 @@ $(document).ready(
 
 <p>把<code>self.class.name</code>改成<code>name</code>,由于已经处于类的上下文，所以直接用<code>name</code>即可.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -296,7 +296,7 @@ $(document).ready(
 </span><span class="line">
 </span><span class="line">    <span class="n">after_save</span> <span class="ss">:reset_index</span>
 </span><span class="line">  <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span></code></pre></td></tr></table></div></figure>
 
 <p>其中，<code>default_value_for</code>是设置对象默认值的，其上下文应该是实例对象而不是类，所以需要在代码块中传入<code>node</code>.</p>
 </div>
@@ -315,12 +315,12 @@ $(document).ready(
   
 
 
-<time datetime="2013-03-20T11:06:00+08:00" pubdate data-updated="true">2013年03月20日 11:06:00</time></div>
+<time datetime="2013-03-20T11:06:00+08:00" pubdate data-updated="true"></time></div>
 	
 
 <div class="categories">
 
-	<a class='category' href='/blog/categories/技术/'>技术</a>
+	<a class='category' href='/blog/categories/ji-zhu/'>技术</a>
 
 </div>
 
@@ -329,8 +329,9 @@ $(document).ready(
 
 
 	
-		<span class="comments"><a href="/blog/rails-activesupport-concern#disqus_thread">Comments</a></span>
-	
+  
+    <span class="comments"><a href="#comments">Comments</a></span>
+  
 </div>
 </article>
 
@@ -346,26 +347,36 @@ $(document).ready(
 
 
 
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
 
-    海岩咖啡
+  <section>
+    <h1>评论</h1>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="/blog/rails-activesupport-concern" data-title="Rails ActiveSupport::Concern Object doesn't support#inspect" data-url="pishilong.com/blog/rails-activesupport-concern"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pishilong"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</div>
+  </section>
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2021
+
+    海岩咖啡,皮诗龙
 
 <br>
-Powered by Octopress.
-</footer>
+<a href="https://beian.miit.gov.cn/" target="_blank">京ICP备14039006号-1</a></footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
 
 
 <script type="text/javascript">
@@ -373,8 +384,8 @@ Powered by Octopress.
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pishilong.github.com/blog/rails-activesupport-concern';
-        var disqus_url = 'http://pishilong.github.com/blog/rails-activesupport-concern';
+        var disqus_identifier = 'pishilong.com/blog/rails-activesupport-concern';
+        var disqus_url = 'pishilong.com/blog/rails-activesupport-concern';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -383,7 +394,6 @@ Powered by Octopress.
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
 
 
 

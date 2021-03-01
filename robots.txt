@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://pishilong.github.com/sitemap.xml 
+Sitemap: pishilong.com/sitemap.xml 

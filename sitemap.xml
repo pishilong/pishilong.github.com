@@ -1,103 +1,188 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-    <url>
-        <loc>http://pishilong.github.com/blog/qi-xing</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/sha-men</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/yi-shi-wei-jing</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/ckeditorde-ni-xi</loc>
-        <lastmod>2013-12-17T23:58:50+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/wei-xin-bei-hou-de-chan-pin-guan</loc>
-        <lastmod>2013-12-17T23:59:25+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</loc>
-        <lastmod>2013-12-18T00:00:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/pmp-headfirst-ch2</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/rails-activesupport-concern</loc>
-        <lastmod>2013-12-18T00:01:14+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/jquery-validation-plugin-and-select2</loc>
-        <lastmod>2013-12-18T00:01:57+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/ji-wei-su-cheng</loc>
-        <lastmod>2013-12-18T00:02:13+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/long-ma-chuan-jian-tohei-chuan</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji</loc>
-        <lastmod>2013-12-18T00:02:50+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/6-dot-7ping-jie-san-duan-lun-de-gui-ze</loc>
-        <lastmod>2013-12-18T00:03:40+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/pol-7-dot-1</loc>
-        <lastmod>2013-12-18T22:40:12+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/pol-7-dot-2</loc>
-        <lastmod>2014-01-19T15:34:16+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/wei-liao-wang-que-de-ji-nian</loc>
-        <lastmod>2014-05-24T13:56:10+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/du-yu-shu</loc>
-        <lastmod>2014-07-16T10:55:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/about/</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/archives/</loc>
-        <lastmod>2014-07-16T10:55:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/archives/</loc>
-        <lastmod>2014-07-16T10:55:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/categories/</loc>
-        <lastmod>2013-12-13T13:12:31+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/</loc>
-        <lastmod>2014-07-16T10:55:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/blog/tags/</loc>
-        <lastmod>2013-12-13T13:12:40+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/</loc>
-        <lastmod>2014-07-16T10:55:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pishilong.github.com/robots.txt</loc>
-        <lastmod>2013-12-13T11:29:37+08:00</lastmod>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>pishilong.com/blog/da-zhi-ruo-yu</loc>
+<lastmod>2016-05-10T10:46:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/definition-of-domain</loc>
+<lastmod>2016-03-01T13:31:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/yue-qian</loc>
+<lastmod>2015-12-03T19:30:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/taozhongren</loc>
+<lastmod>2015-08-26T00:41:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/big-data-and-society-problems</loc>
+<lastmod>2015-05-12T18:38:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/black-swan</loc>
+<lastmod>2015-04-21T20:08:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/ke-xue-fei-zhen-li</loc>
+<lastmod>2015-04-17T17:23:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/zha-zhu-he-ji-guang</loc>
+<lastmod>2015-04-13T16:01:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/li-sha-jiang-xue-jin</loc>
+<lastmod>2014-11-15T16:38:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/out-of-control-ch1</loc>
+<lastmod>2014-09-04T10:47:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/love-is-rong</loc>
+<lastmod>2014-09-01T10:04:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/child-edu</loc>
+<lastmod>2014-08-30T09:22:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/du-yu-shu</loc>
+<lastmod>2014-07-16T09:32:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/wei-liao-wang-que-de-ji-nian</loc>
+<lastmod>2014-05-24T10:23:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/pol-7-dot-2</loc>
+<lastmod>2014-01-03T19:13:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/pol-7-dot-1</loc>
+<lastmod>2013-12-18T21:59:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/6-dot-7ping-jie-san-duan-lun-de-gui-ze</loc>
+<lastmod>2013-12-17T22:31:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji</loc>
+<lastmod>2013-12-13T09:47:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/long-ma-chuan-jian-tohei-chuan</loc>
+<lastmod>2013-06-28T11:40:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/ji-wei-su-cheng</loc>
+<lastmod>2013-05-06T19:39:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/jquery-validation-plugin-and-select2</loc>
+<lastmod>2013-03-29T11:18:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/rails-activesupport-concern</loc>
+<lastmod>2013-03-20T11:06:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/pmp-headfirst-ch2</loc>
+<lastmod>2012-11-09T11:24:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</loc>
+<lastmod>2012-08-08T11:17:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/wei-xin-bei-hou-de-chan-pin-guan</loc>
+<lastmod>2012-08-01T09:46:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/ckeditorde-ni-xi</loc>
+<lastmod>2012-06-28T11:39:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/yi-shi-wei-jing</loc>
+<lastmod>2012-06-28T00:39:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/sha-men</loc>
+<lastmod>2012-06-24T22:45:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/qi-xing</loc>
+<lastmod>2012-06-23T01:26:00+08:00</lastmod>
+</url>
+<url>
+<loc>pishilong.com/blog/</loc>
+</url>
+<url>
+<loc>pishilong.com/archives/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/archives/</loc>
+</url>
+<url>
+<loc>pishilong.com/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/tags/</loc>
+</url>
+<url>
+<loc>pishilong.com/about/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/</loc>
+</url>
+<url>
+<loc>pishilong.com/resume.html</loc>
+</url>
+<url>
+<loc>pishilong.com/timeline.html</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E7%94%9F%E6%B4%BB/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E8%AF%BB%E4%B9%A6/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E5%8E%86%E5%8F%B2/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E6%8A%80%E6%9C%AF/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E4%BA%A7%E5%93%81/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E7%AE%A1%E7%90%86/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E6%80%9D%E7%BB%B4/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E6%9D%82%E8%B0%88/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E9%9A%8F%E6%83%B3/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/categories/%E6%9E%B6%E6%9E%84/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/tags/%E9%80%BB%E8%BE%91%E7%9A%84%E5%8A%9B%E9%87%8F/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/tags/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/tags/%E5%A4%B1%E6%8E%A7/</loc>
+</url>
+<url>
+<loc>pishilong.com/blog/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/</loc>
+</url>
 </urlset>

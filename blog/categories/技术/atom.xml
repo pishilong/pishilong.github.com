@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[分类: 技术 | 海岩咖啡的部落格]]></title>
-  <link href="http://pishilong.github.com/blog/categories/技术/atom.xml" rel="self"/>
-  <link href="http://pishilong.github.com/"/>
-  <updated>2014-07-16T10:55:24+08:00</updated>
-  <id>http://pishilong.github.com/</id>
+  <link href="pishilong.com/blog/categories/技术/atom.xml" rel="self"/>
+  <link href="pishilong.com/"/>
+  <updated>2021-03-01T18:31:51+08:00</updated>
+  <id>pishilong.com/</id>
   <author>
-    <name><![CDATA[海岩咖啡]]></name>
+    <name><![CDATA[海岩咖啡,皮诗龙]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[jquery validation plugin and select2]]></title>
-    <link href="http://pishilong.github.com/blog/jquery-validation-plugin-and-select2"/>
+    <link href="pishilong.com/blog/jquery-validation-plugin-and-select2"/>
     <updated>2013-03-29T11:18:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/jquery-validation-plugin-and-select2</id>
+    <id>pishilong.com/blog/jquery-validation-plugin-and-select2</id>
     <content type="html"><![CDATA[<p><a href="http://docs.jquery.com/Plugins/Validation">Jquery Validation Plugin</a>是非常棒的验证插件，select2也是一款很不错的select插件，让select更加强大与美观。</p>
 
 <p>Jquery Validation Plugin会默认忽视hidden的元素，而select2会把真正的select隐藏，而用自己的元素进行包裹，这时，select2就无法验证了。</p>
@@ -40,9 +40,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rails ActiveSupport::Concern Object doesn't support#inspect]]></title>
-    <link href="http://pishilong.github.com/blog/rails-activesupport-concern"/>
+    <link href="pishilong.com/blog/rails-activesupport-concern"/>
     <updated>2013-03-20T11:06:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/rails-activesupport-concern</id>
+    <id>pishilong.com/blog/rails-activesupport-concern</id>
     <content type="html"><![CDATA[<p>这篇博客记录使用ActiveSupport::Concern对业务进行抽象时，遇到的Object doesn’t support#inspect问题.</p>
 
 <h1 id="section">背景</h1>
@@ -172,9 +172,9 @@ after_save :reset_index   end ```
   
   <entry>
     <title type="html"><![CDATA[ckeditor上传文件失败]]></title>
-    <link href="http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai"/>
+    <link href="pishilong.com/blog/ckeditorshang-chuan-wen-jian-shi-bai"/>
     <updated>2012-08-08T11:17:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</id>
+    <id>pishilong.com/blog/ckeditorshang-chuan-wen-jian-shi-bai</id>
     <content type="html"><![CDATA[<p>Rails: 3.2.6</p>
 
 <p>使用的是Ckeditor的Rails Gem.</p>
@@ -196,9 +196,9 @@ after_save :reset_index   end ```
   
   <entry>
     <title type="html"><![CDATA[ckeditor的逆袭]]></title>
-    <link href="http://pishilong.github.com/blog/ckeditorde-ni-xi"/>
+    <link href="pishilong.com/blog/ckeditorde-ni-xi"/>
     <updated>2012-06-28T11:39:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/ckeditorde-ni-xi</id>
+    <id>pishilong.com/blog/ckeditorde-ni-xi</id>
     <content type="html"><![CDATA[<p>原本用kindeditor毫无压力，也算支持国产，但是无奈，为了整合数学公式编辑器，只能改用ckeditor或者tinyMCE这两个主流大哥。</p>
 
 <p>而tinyMCE又与Rails不能很好集成，只有原生的插件。一没有gem，二不能上传文件。</p>
@@ -216,20 +216,16 @@ rails generate ckeditor:install --orm=active_record --backend=paperclip
     <p>ckeditor总会把内容自己套一层&lt;p&gt;标签</p>
 
     <p>这是因为ckeditor对于换行有三种模式，默认是&lt;p&gt;,改成br模式或者div模式即可解决问题，在config.js中加入:
-{% highlight ruby %}
-config.enterMode = CKEDITOR.ENTER_BR;
-config.shiftEnterMode = CKEDITOR.ENTER_BR;
-{% endhighlight %}</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="o">.</span><span class="n">enterMode</span> <span class="o">=</span> <span class="no">CKEDITOR</span><span class="o">.</span><span class="n">ENTER_BR</span><span class="p">;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">shiftEnterMode</span> <span class="o">=</span> <span class="no">CKEDITOR</span><span class="o">.</span><span class="n">ENTER_BR</span><span class="p">;</span></code></pre></div></p>
   </li>
   <li>
     <p>HTML里面本来&lt;table&gt;标签在<span>标签里面，在kindeditor里面，能正常显示在富文本编辑器里，但是ckeditor会自己把外面的<span>标签移除，然后内嵌到table里的文字周围。</span></span></p>
 
     <p>原本以为是ckeditor自己怪异的行为，然后几乎花了一天时间去看ckeditor的源码以及详细设置，使用了很多方案:
-{% highlight ruby %}
-config.removePlugins = ‘scayt’;
-config.autoParagraph = false;
-config.ignoreEmptyParagraph = false;
-{% endhighlight %}</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="o">.</span><span class="n">removePlugins</span> <span class="o">=</span> <span class="err">‘</span><span class="n">scayt</span><span class="err">’</span><span class="p">;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">autoParagraph</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">ignoreEmptyParagraph</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span></code></pre></div></p>
 
     <p>都不行，后来在一个帖子里看到，span标签属于inline element,而table属于block element,从规范和合理的角度出发,block是不能内嵌到inline element的。
 所以ckeditor进行了检查并处理。确实在ckeditor的dtd中也对各类标签进行了定义</p>

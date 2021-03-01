@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title>ckeditor上传文件失败  | 海岩咖啡的部落格</title>
 
-<meta name="author" content="海岩咖啡">
+<meta name="author" content="海岩咖啡,皮诗龙">
 
 <meta name="description" content="Rails: 3.2.6 使用的是Ckeditor的Rails Gem. 突然不能上传文件，控制台显示在上传插入数据库时直接rollback了 于是重载app/controllers/ckeditor/application_controller.rb的respond_with_asset( &hellip;"> <meta name="keywords" content="rails, ckeditor, ckeditor上传文件失败, god">
 
@@ -15,8 +15,8 @@
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <!--[if lt IE 9]><script src="/javascripts/libs/html5.min.js"></script><![endif]-->
+  <script src="/javascripts/libs/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
 <script language="Javascript" type="text/javascript">
@@ -62,31 +62,31 @@ $(document).ready(
 	<header id="header" class="inner"><h1><a href="/">海岩咖啡的部落格</a></h1>
 <h4>闻过则喜，见贤思齐</h4>
 <nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/archives">Archive</a></li>
-  <li><a href="/blog/categories">Category</a></li>
-  <li><a href="/blog/tags">Tag</a></li>
-  <li><a href="/about">About</a></li>
+	<li><a href="/">文章</a></li>
+	<li><a href="/archives">列表</a></li>
+  <li><a href="/blog/categories">分类</a></li>
+  <li><a href="/blog/tags">标签</a></li>
+  <li><a href="/about">关于我</a></li>
 </ul>
-</nav>
+</nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/archives">Archive</a></li>
-  <li><a href="/blog/categories">Category</a></li>
-  <li><a href="/blog/tags">Tag</a></li>
-  <li><a href="/about">About</a></li>
+	<li><a href="/">文章</a></li>
+	<li><a href="/archives">列表</a></li>
+  <li><a href="/blog/categories">分类</a></li>
+  <li><a href="/blog/tags">标签</a></li>
+  <li><a href="/about">关于我</a></li>
 </ul>
-</div>
+</div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
 		<div class="container">
 			<form action="http://google.com/search" method="get">
 				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:pishilong.github.com">
+				<input type="hidden" name="q" value="site:pishilong.com">
 			</form>
 		</div>
 	</div>
@@ -129,12 +129,12 @@ $(document).ready(
   
 
 
-<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true">2012年08月08日 11:17:00</time></div>
+<time datetime="2012-08-08T11:17:00+08:00" pubdate data-updated="true"></time></div>
 	
 
 <div class="categories">
 
-	<a class='category' href='/blog/categories/技术/'>技术</a>
+	<a class='category' href='/blog/categories/ji-zhu/'>技术</a>
 
 </div>
 
@@ -143,8 +143,9 @@ $(document).ready(
 
 
 	
-		<span class="comments"><a href="/blog/ckeditorshang-chuan-wen-jian-shi-bai#disqus_thread">Comments</a></span>
-	
+  
+    <span class="comments"><a href="#comments">Comments</a></span>
+  
 </div>
 </article>
 
@@ -160,26 +161,36 @@ $(document).ready(
 
 
 
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
 
-    海岩咖啡
+  <section>
+    <h1>评论</h1>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="/blog/ckeditorshang-chuan-wen-jian-shi-bai" data-title="ckeditor上传文件失败" data-url="pishilong.com/blog/ckeditorshang-chuan-wen-jian-shi-bai"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pishilong"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</div>
+  </section>
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2021
+
+    海岩咖啡,皮诗龙
 
 <br>
-Powered by Octopress.
-</footer>
+<a href="https://beian.miit.gov.cn/" target="_blank">京ICP备14039006号-1</a></footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
 
 
 <script type="text/javascript">
@@ -187,8 +198,8 @@ Powered by Octopress.
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai';
-        var disqus_url = 'http://pishilong.github.com/blog/ckeditorshang-chuan-wen-jian-shi-bai';
+        var disqus_identifier = 'pishilong.com/blog/ckeditorshang-chuan-wen-jian-shi-bai';
+        var disqus_url = 'pishilong.com/blog/ckeditorshang-chuan-wen-jian-shi-bai';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -197,7 +208,6 @@ Powered by Octopress.
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
 
 
 

@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[分类: 产品 | 海岩咖啡的部落格]]></title>
-  <link href="http://pishilong.github.com/blog/categories/产品/atom.xml" rel="self"/>
-  <link href="http://pishilong.github.com/"/>
-  <updated>2014-07-16T10:55:24+08:00</updated>
-  <id>http://pishilong.github.com/</id>
+  <link href="pishilong.com/blog/categories/产品/atom.xml" rel="self"/>
+  <link href="pishilong.com/"/>
+  <updated>2021-03-01T18:31:51+08:00</updated>
+  <id>pishilong.com/</id>
   <author>
-    <name><![CDATA[海岩咖啡]]></name>
+    <name><![CDATA[海岩咖啡,皮诗龙]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[微信背后的产品观]]></title>
-    <link href="http://pishilong.github.com/blog/wei-xin-bei-hou-de-chan-pin-guan"/>
+    <link href="pishilong.com/blog/wei-xin-bei-hou-de-chan-pin-guan"/>
     <updated>2012-08-01T09:46:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/wei-xin-bei-hou-de-chan-pin-guan</id>
+    <id>pishilong.com/blog/wei-xin-bei-hou-de-chan-pin-guan</id>
     <content type="html"><![CDATA[<p>http://www.geekpark.net/read/view/161904</p>
 
 <p>http://it.sohu.com/20120725/n349005014.shtml</p>

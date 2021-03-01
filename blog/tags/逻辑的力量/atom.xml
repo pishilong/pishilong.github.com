@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag: 逻辑的力量 | 海岩咖啡的部落格]]></title>
-  <link href="http://pishilong.github.com/blog/tags/luo-ji-de-li-liang/atom.xml" rel="self"/>
-  <link href="http://pishilong.github.com/"/>
-  <updated>2014-07-16T10:55:24+08:00</updated>
-  <id>http://pishilong.github.com/</id>
+  <link href="pishilong.com/blog/tags/逻辑的力量/atom.xml" rel="self"/>
+  <link href="pishilong.com/"/>
+  <updated>2021-03-01T18:31:51+08:00</updated>
+  <id>pishilong.com/</id>
   <author>
-    <name><![CDATA[海岩咖啡]]></name>
+    <name><![CDATA[海岩咖啡,皮诗龙]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[7.2 真值表]]></title>
-    <link href="http://pishilong.github.com/blog/pol-7-dot-2"/>
+    <link href="pishilong.com/blog/pol-7-dot-2"/>
     <updated>2014-01-03T19:13:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/pol-7-dot-2</id>
+    <id>pishilong.com/blog/pol-7-dot-2</id>
     <content type="html"><![CDATA[<p><code>真值表</code>可以判定论证的有效性，本节考察了5个类型基本复合句的真值表。</p>
 
 <ul>
@@ -51,15 +51,14 @@
 <ol>
   <li>练习2.2，答案错了，当且仅当是充要条件，明显希拉里是妹子啊~！</li>
 </ol>
-
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[7.1 日常论证的符号化]]></title>
-    <link href="http://pishilong.github.com/blog/pol-7-dot-1"/>
+    <link href="pishilong.com/blog/pol-7-dot-1"/>
     <updated>2013-12-18T21:59:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/pol-7-dot-1</id>
+    <id>pishilong.com/blog/pol-7-dot-1</id>
     <content type="html"><![CDATA[<p>逻辑发展不是连续的，亚里士多德(公元前384-322)的三段论逻辑以及斯多葛学派克里希普斯(公元前279-206)的命题逻辑之后,逻辑领域几乎没有什么有意义的进步。</p>
 
 <p>中世纪时期，存在逻辑学的复兴，但中世纪末期再一次被忽视，直至莱布尼兹(1646-1716)出现，都几乎没有创造性的工作。</p>
@@ -119,9 +118,9 @@
   
   <entry>
     <title type="html"><![CDATA[6.7 评价三段论的规则]]></title>
-    <link href="http://pishilong.github.com/blog/6-dot-7ping-jie-san-duan-lun-de-gui-ze"/>
+    <link href="pishilong.com/blog/6-dot-7ping-jie-san-duan-lun-de-gui-ze"/>
     <updated>2013-12-17T22:31:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/6-dot-7ping-jie-san-duan-lun-de-gui-ze</id>
+    <id>pishilong.com/blog/6-dot-7ping-jie-san-duan-lun-de-gui-ze</id>
     <content type="html"><![CDATA[<p>在本章中，讨论直言三段论时使用的是文恩图，这是现代逻辑的工具，在发明文恩图之前，人们是根据一系列规则来评价直言三段论的。共有<code>5</code>个规则:</p>
 
 <ol>
@@ -243,9 +242,9 @@
   
   <entry>
     <title type="html"><![CDATA[6.6 连锁与消除项补集]]></title>
-    <link href="http://pishilong.github.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji"/>
+    <link href="pishilong.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji"/>
     <updated>2013-12-13T09:47:00+08:00</updated>
-    <id>http://pishilong.github.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji</id>
+    <id>pishilong.com/blog/lian-suo-yu-xiao-chu-xiang-bu-ji</id>
     <content type="html"><![CDATA[<p>本节讨论的是日常语言中另外的两种复杂情况：连锁和项补集。</p>
 
 <h2 id="section">连锁</h2>
